@@ -211,7 +211,7 @@ main{
             background: rgb(36, 157, 60);
             color: aliceblue;
             border: solid 2px #cd1919;
-            margin-bottom: 100px;
+            margin-bottom: 500px;
         }
 
         li{
@@ -227,11 +227,11 @@ main{
 
                 a{
                     img{
-                        height:24px;
+                        height:20px;
                         margin-top:8px;
                         margin-left: 10px;
                         margin-right: 10px;
-                        width: 24px;
+                        width: 20px;
                         padding:0;
                     }
                     
@@ -258,7 +258,7 @@ main{
                     p{
                         width:900px;
                         height:300px;
-                        padding: 5px;
+                        padding: 10px;
                         margin-left: 40px;
                         border-radius: 10px;
                         border: solid 1px rgba(14, 157, 126, 0.5);
