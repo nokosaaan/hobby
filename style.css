@@ -11,7 +11,7 @@ html{
 body{
     position: relative;
     margin:0;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display:grid;
     grid-template-columns: [left]1fr[main]1500px[end]1fr[right];
     grid-template-rows: [header]auto[nav]auto[main]auto[aside]auto[footer]auto[bottom];
@@ -19,16 +19,18 @@ body{
 
 header{
     position: relative;
-    grid-column-start: left;
-    grid-column-end: right;
+    grid-column-start: main;
+    grid-column-end: end;
     grid-row-start: header;
     grid-row-end: nav;
 }
 
 header img{
     display:block;
-    width:100%;
-    max-height:100vh;
+    width:auto;
+    height:auto;
+    padding: 0;
+    margin: 0;
     filter:opacity(50%);
     z-index: 20;
 }
@@ -43,10 +45,12 @@ header img{
     transform:translate(-50%,-500%);
     width:100%;
     max-height:100vh;
-    color: aqua;
-    background:rgba(242, 130, 232, 0.5);
+    color: rgb(64, 146, 92);
+    background:rgba(177, 174, 177, 0.5);
     -webkit-text-stroke: 0.5px white;
     font-size: 50px;
+    border:solid 2px rgb(31, 31, 49);
+    border-radius: 10px;
     padding:5px;
     z-index: 21;
 }
@@ -305,8 +309,6 @@ main{
     }
 }
 
-
-
 aside{
     grid-column-start:main;
     grid-column-end:end;
@@ -341,8 +343,6 @@ aside{
     }
 }
 
-
-
 footer{
     grid-column-start:left;
     grid-column-end:right;
@@ -352,4 +352,29 @@ footer{
     color:white;
     background:black;
     padding:10px 0;
+}
+
+.back{
+    a {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        width: 48px;
+        height: 48px;
+        text-decoration: none;
+        background-color: #000000;
+        display: block;
+        text-align: center;
+        border-radius: 24px;
+        z-index: 45;
+    }
+  
+    a::before {
+        content: '\f062';
+        font-family: 'Font Awesome 6 Free';
+        font-size: 20px;
+        font-weight: 900;
+        color: #fff;
+        line-height: 48px;
+    }
 }
