@@ -28,19 +28,22 @@ header{
     .top-title{
         display: block;
         
-        img{
-            justify-content: center;
-            align-items: center;
-            bottom:0;
-            left:50%;
-            transform:translate(75%,5%);
-            width:40%;
-            height:40%;
-            padding: 0;
-            margin-top: 10px;
-            filter:opacity(95%);
-            z-index: 20;
-        }   
+        .slide{
+            img{
+                justify-content: center;
+                align-items: center;
+                bottom:0;
+                left:50%;
+                transform:translate(75%,5%);
+                width:40%;
+                height:40%;
+                padding: 0;
+                margin-top: 10px;
+                filter:opacity(95%);
+                z-index: 20;
+            }   
+        }
+        
 
         p{
             justify-content: center;
@@ -64,9 +67,14 @@ header{
         /*メディアクエリ*/
         @media(max-width:1024px){
             .top-title{
-                img{
-                    transform:translate(65%,5%);
-                }      
+
+                .slide{
+
+                    img{
+                        transform:translate(65%,5%);
+                    }      
+                }
+                
 
                 p{
                     transform:translate(65%,-70%);
