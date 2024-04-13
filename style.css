@@ -75,13 +75,13 @@ header{
         .scroll_button {
             position: absolute;
             display: block;
-            height: 30px;
-            width: 30px;
+            height: 40px;
+            width: 40px;
         /* 縦中央から20px上の位置 */
             top: 50%;
             margin-top: -20px;
         /* 上辺と右辺のみ幅5pxの枠線 */
-            border-width: 5px 5px 0 0;
+            border-width: 2px 2px 0 0;
             border-style: solid;
             border-color: #fdfdfd;
             cursor: pointer;
