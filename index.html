@@ -81,7 +81,7 @@
         <ul>
             <a href="#about"><li>About</li></a>
             <a href="#room1"><li>Room1</li></a>
-            <a href="#room2"><li>Room2</li></a>
+            <a href="#room2"><li class="open">Room2</li></a>
             <a href="#room3"><li>Room3</li></a>
         </ul>
     </nav>
@@ -165,6 +165,10 @@
                 </div>
             </div><!--anime-->
         </div><!--room1-->
+
+        <div class="modal_content">
+            <p class="modal_delete">閉じる</p>
+        </div>
 
         <div id="room2">
             <div class="doujin">
@@ -1335,5 +1339,21 @@
         });    
     </script>
     <!--参照:https://awesome-linus.com/articles/select-option-href-->
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="modal.js"></script>
+    <script>
+    $(function(){
+        const modal = $('.modal_content');
+        // 「クリックしたらモーダル表示」をクリックしたらモーダルを表示
+        $('.open').on('click', function(){
+            modal.addClass("open");
+        });
+        // 「閉じる」をクリックしたらモーダルを非表示
+        $('.modal_delete').on('click', function(){
+            modal.removeClass("open");
+        });
+    });
+    </script>
 </body>
 </html>
