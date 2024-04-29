@@ -400,6 +400,18 @@ main{
 #room2{
     margin-top: 300px;
 
+    details{
+        border: 1px solid #aaa;
+        border-radius: 4px;
+        padding: 0.5em 0.5em 0;
+    }
+      
+    summary{
+        font-weight: bold;
+        margin: -0.5em -0.5em 0;
+        padding: 0.5em;
+    }
+
     .doujin {
         width: 100%;
         margin:1em;
