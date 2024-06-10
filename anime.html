@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="anime_style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+</head>
+
+<body>
+    <div id="network"></div>
+    <script type="text/javascript">
+      var nodes = new vis.DataSet([
+        //1~10:ジャンル名
+        //20000~29999:恋愛作品
+        //30000~39999:アクション作品
+        //40000~49999:日常作品
+        //50000~59999:異世界作品
+        //60000~69999:泣き作品
+        //70000~79999:ファンタジー作品
+        //80000~89999:その他
+        {id: 1, label: 'ジャンル'},
+        {id: 2, label: '恋愛'},
+        {id: 3, label: 'アクション'},
+        {id: 4, label: '日常'},
+        {id: 5, label: '異世界'},
+        {id: 6, label: '泣き'},
+        {id: 7, label: 'ファンタジー'},
+        {id: 8, label: 'その他'},
+      ]);
+      var edges = new vis.DataSet([
+        {from: 1, to: 2, arrows: 'to'},
+        {from: 1, to: 3, arrows: 'to'},
+        {from: 1, to: 4, arrows: 'to'},
+        {from: 1, to: 5, arrows: 'to'},
+        {from: 1, to: 6, arrows: 'to'},
+        {from: 1, to: 7, arrows: 'to'},
+        {from: 1, to: 8, arrows: 'to'},
+      ]);
+      var container = document.getElementById('network');
+      var data = {
+        nodes: nodes,
+        edges: edges
+      };
+      var options = {
+      };
+      var network = new vis.Network(container, data, options);
+    </script>
+  </body>
