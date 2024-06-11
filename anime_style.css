@@ -1,10 +1,11 @@
 @charset "UTF-8";
-*{
-    box-sizing: border-box;
-}
 
 #network{
-    width:  1900px;
-    height: 1200px;
+    width:  1500px;
+    height: 800px;
     border: 1px solid #000;
+}
+
+#add{
+    size: 28px;
 }

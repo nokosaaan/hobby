@@ -228,6 +228,17 @@
         edges: edges
       };
       var options = {
+        autoResize: true,
+        nodes:{
+          color:{
+            /*
+            border:'#D2E5FF',
+            hover:{
+              border:'#FFFFFF',
+            }
+            */
+          }
+        },
       };
       var network = new vis.Network(container, data, options);
       network.on("click", function(params) {
@@ -240,5 +251,8 @@
         }
       });
     </script>
+    <div id="add">
+      <h2>hello</h2>
+    </div>
   </body>
 </html>
