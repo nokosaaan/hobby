@@ -1,9 +1,17 @@
 @charset "UTF-8";
 
 #network{
-    width:  1500px;
+    width:  1200px;
     height: 800px;
     border: 1px solid #000;
+    margin: 40px;
+}
+
+.search{
+    width:400px;
+    padding:5px;
+    font-size: 32px;
+    cursor: pointer;
 }
 
 #add{
