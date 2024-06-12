@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="anime_style.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.3/dist/css/autoComplete.min.css">
 </head>
 
 <body>
-    <input type="text" placeholder="ノード検索" class="search" onChange=select_node(this.value)>
+    <input type="text" placeholder="ノード検索" id="autoComplete" class="search" onChange=select_node(this.value)>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
     <div id="network"></div>
     <script type="text/javascript">
       var nodes = new vis.DataSet([
@@ -237,7 +239,7 @@
               border:'#FFFFFF',
             }
             */
-          }
+          },
         },
       };
       var network = new vis.Network(container, data, options);
@@ -252,6 +254,109 @@
         }
       });
       */
+      const autoCompleteJS = new autoComplete({
+          placeHolder: "Search for Node...",
+          data: {
+            src: [
+              "1 :ジャンル",
+              "2 : 恋愛",
+              "3 : アクション",
+              "4 : 日常",
+              "5 : 異世界",
+              "6 : 泣き",
+              "7 : ファンタジー",
+              "8 : ギャグ",
+              "9 : その他",
+              "20 : ラブコメ",
+              "21 : 家族愛",
+              "22 : ハーレム",
+              "23 : 妹",
+              "20000 : とらドラ！",
+              "20001 : 凪のあすから",
+              "20002 : true tears",
+              "20003 : ココロコネクト",
+              "20004 : 月がきれい",
+              "20005 : となりの怪物くん",
+              "20006 : CLANNAD",
+              "20007 : CLANNAD AFTER STORY",
+              "20008 : ゴールデンタイム",
+              "20009 : 化物語",
+              "20010 : 傷物語",
+              "20011 : 偽物語",
+              "20012 : 猫物語 黒",
+              "20013 : 物語 セカンドシーズン",
+              "20014 : 憑物語",
+              "20015 : 終物語",
+              "20016 : 暦物語",
+              "20017 : 続・終物語",
+              "20018 : 物語 オフ＆モンスターシーズン",
+              "20019 : 中二病でも恋がしたい！",
+              "20020 : 中二病でも恋がしたい！ 戀",
+              "20021 : 中二病でも恋がしたい！ -Take On Me-",
+              "20022 : 四月は君の嘘",
+              "20023 : ニセコイ",
+              "20024 : ニセコイ:",
+              "20025 : 俺の彼女と幼なじみが修羅場すぎる",
+              "20026 : さくら荘のペットな彼女",
+              "20027 : 変態王子と笑わない猫。",
+              "20028 : かぐや様は告らせたい 天才たちの恋愛頭脳戦",
+              "20029 : かぐや様は告らせたい？",
+              "20030 : かぐや様は告らせたい -ウルトラロマンティック-",
+              "20031 : かぐや様は告らせたい -ファーストキッスは終わらない-",
+              "20032 : からかい上手の高木さん",
+              "20033 : 彼女、お借りします (検索用: kanokari,かのかり,千鶴,墨ちゃん,ルカ)",
+              "20034 : 彼女、お借りします 第2期",
+              "20035 : 彼女、お借りします 第3期",
+              "20036 : やはり俺の青春ラブコメはまちがっている。(検索用: 俺ガイル,比企谷,いろはす,ゆきのん)",
+              "20037 : やはり俺の青春ラブコメはまちがっている。 続",
+              "20038 : やはり俺の青春ラブコメはまちがっている。 完",
+              "20039 : 五等分の花嫁 (検索用: ごとよめ,gotoyome,)",
+              "20040 : 神のみぞ知るセカイ",
+              "20041 : 神のみぞ知るセカイ II",
+              "20042 : 神のみぞ知るセカイ 女神篇",
+              "20043 : 俺の妹がこんなに可愛いわけがない",
+              "20044 : 俺の妹がこんなに可愛いわけがない 第2期",
+              "20045 : エロマンガ先生 (検索用: 和泉紗霧,ラノベ)",
+              "20046 : Just Because!",
+              "20047 : ゲーマーズ! (検索用: 勘違い)",
+              "20048 : 月刊少女野崎くん (検索用: パラス,オーイシマサヨシ,大石昌良)",
+              "20049 : WORKING!! (検索用: 小鳥遊,ぽぷら,ワグナリア,お仕事)",
+              "20050 : WORKING’!!",
+              "20051 : WORKING!!!",
+              "20052 : 僕らはみんな河合荘",
+              "20053 : バカとテストと召喚獣",
+              "20054 : バカとテストと召喚獣 にっ!",
+              "20055 : 寄宿学校のジュリエット",
+              "100000 : 空耳op",
+              "100001 : からかい上手の元高木さん",
+              "100002 : からかい上手の高木さん op,ed集",
+              "100003 : 大石昌良(オーイシマサヨシ)",
+              "100004 : ClariS (検索用: くらりす,クラリス)",
+              "100005 : TrySail (検索用: trysail,とらいせいる)",
+              "100006 : 鈴木このみ (検索用: このみん)",
+              "100007 : fhána (検索用: fhana)",
+              "100008 : 物語シリーズ op,ed集",          
+            ],
+            cache: true,
+          },
+          resultItem: {
+            highlight: true
+          },
+          submit: true,
+          events: {
+            input: {
+              selection: (event) => {
+                const selection = event.detail.selection.value;
+                //const regex = /[^0-9]/g;
+                //const result = selection.replace(regex, "");
+                const number = parseInt(selection);
+                autoCompleteJS.input.value = number;
+              }
+            }
+          }
+      });
+
+
       network.on("selectNode", function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
