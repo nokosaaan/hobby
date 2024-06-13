@@ -5,6 +5,25 @@
     height: 800px;
     border: 1px solid #000;
     margin: 40px;
+
+    
+}
+@media(max-width: 800px){
+    #network{
+        width:  500px;
+        height: 300px;
+        border: 1px solid #000;
+        margin: 35px;
+    }        
+}
+
+@media(max-width: 540px){
+    #network{
+        width:  300px;
+        height: 200px;
+        border: 1px solid #000;
+        margin: 30px;
+    }        
 }
 
 .search{
