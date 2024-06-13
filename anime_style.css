@@ -126,8 +126,8 @@
 
 @media(max-width: 600px){
     #network{
-        width:  300px;
-        height: 240px;
+        width:  440px;
+        height: 280px;
         border: 1px solid #000;
         margin: 30px;
     }
@@ -163,8 +163,8 @@
 
 @media(max-width: 540px){
     #network{
-        width:  300px;
-        height: 240px;
+        width:  330px;
+        height: 260px;
         border: 1px solid #000;
         margin: 30px;
     }
