@@ -57,6 +57,34 @@
         border: 1px solid #000;
         margin: 35px;
     }        
+
+    .batsu {
+        display: block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        
+    }
+      
+      .batsu::before, .batsu::after { /* 共通設定 */
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 340px;
+        width: 3px; /* 棒の幅（太さ） */
+        height: 30px; /* 棒の高さ */
+        background: #b6a9a9;
+        border-radius: 2.5px;
+       }
+      
+      .batsu::before {
+        transform: translate(-50%,-50%) rotate(45deg);
+      }
+      
+      .batsu::after {
+        transform: translate(-50%,-50%) rotate(-45deg);
+      }
 }
 
 @media(max-width: 540px){
@@ -80,7 +108,7 @@
         content: "";
         position: absolute;
         top: -25px;
-        left: 280px;
+        left: 240px;
         width: 3px; /* 棒の幅（太さ） */
         height: 30px; /* 棒の高さ */
         background: #b6a9a9;
