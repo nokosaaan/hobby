@@ -447,7 +447,8 @@
           }
       });
 
-      network.on("selectNode", function(params) {
+      var clicEventType=((window.ontouchstart!==null)? 'selectNode':'touched');
+      network.on(clicEventType, function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
         if (params.nodes.length == 1) {
