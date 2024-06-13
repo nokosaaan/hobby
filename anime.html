@@ -11,8 +11,8 @@
 </head>
 
 <body>
-    <input type="text" placeholder="ノード検索" id="autoComplete" class="search" enterkeyhint="enter" onChange=select_node(this.value)>
-    <input type="submit" value="検索" id="box" >
+    <input type="text" placeholder="ノード検索" id="autoComplete" class="search" onChange=select_node(this.value)>
+    <input type="button" value="検索" id="box" >
     <span class="batsu" onclick=reset()></span>    
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
     <div id="network"></div>
@@ -448,6 +448,12 @@
           }
       });
       
+      
+      //検索ボタンを押したときselect_node関数を実行
+      let checkButton = document.getElementById('box');
+      checkButton.addEventListener('click',select_node(container.value));
+      
+      //ノードをクリックしたとき発動,任意のリンクに飛ばす
       network.on('click', function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
@@ -458,6 +464,8 @@
           }
         }
       });
+
+      //ノードが選択されたとき発動,選択ノードを画面の中心へ
       network.on('selectNode', function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
@@ -466,17 +474,11 @@
         select_node(selectedNodeId);
       });
 
-      network.on('hold', function(params) {
-        //選択したノードのIDを取得
-        let selectedNodeId = params.nodes[0];
-        
-        //共通の関数select_nodeを呼び出す
-        select_node(selectedNodeId);
-      });
-  
+      //select_node関数,ノード選択時やenterキー,検索ボタンを押したときに発動
       function select_node(value){
         try{            
           //検索されたノードを選択
+          console.log(value);
           network.selectNodes([value]);
           //選択したノードの位置を取得
           let positions = network.getPositions([value]);
@@ -490,7 +492,7 @@
           network.fit();
         }
       }
-
+      /*
       network2.on('click', function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
@@ -508,15 +510,9 @@
         //共通の関数select_nodeを呼び出す
         select_node(selectedNodeId);
       });
+      */
 
-      network.on('hold', function(params) {
-        //選択したノードのIDを取得
-        let selectedNodeId = params.nodes[0];
-        
-        //共通の関数select_nodeを呼び出す
-        select_node(selectedNodeId);
-      });
-      
+      //検索ボックスの値をリセットする関数
       function reset(){
         autoCompleteJS.input.value = "";
       }
