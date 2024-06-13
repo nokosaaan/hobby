@@ -12,7 +12,8 @@
 
 <body>
     <input type="text" placeholder="ノード検索" id="autoComplete" class="search" onChange=select_node(this.value)>
-    <input type="submit" value="検索" id="box">
+    <input type="submit" value="検索" id="box" >
+    
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
     <header>
     <div id="network"></div>
@@ -292,6 +293,7 @@
         
       ]);
       var container = document.getElementById('network');
+      var sel_con= document.getElementById('box');
       var data = {
         nodes: nodes,
         edges: edges
@@ -310,6 +312,7 @@
         },
       };
       var network = new vis.Network(container, data, options);
+      var network2 = new vis.Network(sel_con, data, options);
       /*
       network.on("click", function(params) {
         if (params.nodes.length == 1) {
@@ -447,23 +450,27 @@
           }
       });
 
-      var clicEventType=((window.ontouchstart!==null)? 'selectNode':'touched');
-      network.on(clicEventType, function(params) {
+      var clicEventType=((window.ontouchstart!==null)? 'selectNode':'click');
+      network.on('click', function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
-        if (params.nodes.length == 1) {
-          //var nodeId = params.nodes[0];
+        if(params.nodes.length==1){
           var node = nodes.get(selectedNodeId);
           if(selectedNodeId>=20000){
             open(node.click,"_blank");
           }
         }
+      });
+      network.on('selectNode', function(params) {
+        //選択したノードのIDを取得
+        let selectedNodeId = params.nodes[0];
+        
         //共通の関数select_nodeを呼び出す
         select_node(selectedNodeId);
       });
-
+  
       function select_node(value){
-        try{
+        try{            
           //検索されたノードを選択
           network.selectNodes([value]);
           //選択したノードの位置を取得
@@ -478,6 +485,24 @@
           network.fit();
         }
       }
+
+      network2.on('click', function(params) {
+        //選択したノードのIDを取得
+        let selectedNodeId = params.nodes[0];
+        if(params.nodes.length==1){
+          var node = nodes.get(selectedNodeId);
+          if(selectedNodeId>=20000){
+            open(node.click,"_blank");
+          }
+        }
+      });
+      network2.on('selectNode', function(params) {
+        //選択したノードのIDを取得
+        let selectedNodeId = params.nodes[0];
+        
+        //共通の関数select_nodeを呼び出す
+        select_node(selectedNodeId);
+      });     
     </script>
 
     <div id="add">
