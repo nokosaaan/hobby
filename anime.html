@@ -11,8 +11,9 @@
 </head>
 
 <body>
-    <input type="text" id="autoComplete" class="search" enterkeyhint="enter" onChange=select_node(this.value)>
-    <input type="button" value="検索" id="box" >
+    <input type="text" id="autoComplete" class="search" enterkeyhint="enter" >
+    <!--onChange=select_node(this.value)-->
+    <input type="button" value="検索" id="box" onclick=Button()>
     <span class="batsu" onclick=reset()></span>    
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
     <div id="network"></div>
@@ -446,25 +447,16 @@
             }
           }
       });
-      
-
-      /*
-      
-      code.addEventListener('keydown',keydown_event);
-
-      function keydown_event(e){
-        if(e.key === 'Enter'){
-          //検索ボタンを押したときselect_node関数を実行
-          let checkButton = document.getElementById('box');
-          
-        }
-        return false
-      }
-      */
-      
             
+      function Button(){
+        var code = document.getElementById('autoComplete').value;
+        console.log(1);
+        select_node(code);
+      }
+
+      var clickEventType = (( window.ontouchstart!==null ) ? 'click':'hold');
       //ノードをクリックしたとき発動,任意のリンクに飛ばす
-      network.on('click', function(params) {
+      network.on(clickEventType, function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
         if(params.nodes.length==1){
