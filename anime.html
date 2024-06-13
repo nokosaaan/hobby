@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <input type="text" placeholder="ノード検索" id="autoComplete" class="search" enterkeyhint="enter" onChange=select_node(this.value)>
+    <input type="text" id="autoComplete" class="search" enterkeyhint="enter" onChange=select_node(this.value)>
     <input type="button" value="検索" id="box" >
     <span class="batsu" onclick=reset()></span>    
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
@@ -310,7 +310,6 @@
         },
       };
       var network = new vis.Network(container, data, options);
-      var network2 = new vis.Network(sel_con, data, options);
       /*
       network.on("click", function(params) {
         if (params.nodes.length == 1) {
@@ -450,18 +449,19 @@
       
 
       /*
-      const code = document.getElementById("autoComplete");
+      
       code.addEventListener('keydown',keydown_event);
 
       function keydown_event(e){
         if(e.key === 'Enter'){
           //検索ボタンを押したときselect_node関数を実行
           let checkButton = document.getElementById('box');
-          checkButton.addEventListener('click',select_node(container.value));
+          
         }
         return false
       }
       */
+      
             
       //ノードをクリックしたとき発動,任意のリンクに飛ばす
       network.on('click', function(params) {
@@ -493,7 +493,7 @@
           //選択したノードの位置を取得
           let positions = network.getPositions([value]);
           let position = positions[value];
-          console.log(position);
+          //console.log(position);
           let options = {position: position, animation: {duration: 500, easingFunction:'linear'}}; 
           //選択したノードの位置に移動
           network.moveTo(options);
@@ -531,5 +531,13 @@
     <div id="add">
       <h2>hello</h2>
     </div>
+    <script>
+      const paragraph = document.querySelector("h2");
+      sel_con.addEventListener('click',updateButton);
+      function updateButton(){
+        const code = document.getElementById("autoComplete");
+        paragraph.textContent=code.value;
+      }
+    </script>
   </body>
 </html>
