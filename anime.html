@@ -11,13 +11,11 @@
 </head>
 
 <body>
-    <input type="text" placeholder="ノード検索" id="autoComplete" class="search" onChange=select_node(this.value)>
+    <input type="text" placeholder="ノード検索" id="autoComplete" class="search" enterkeyhint="enter" onChange=select_node(this.value)>
     <input type="submit" value="検索" id="box" >
-    
+    <span class="batsu" onclick=reset()></span>    
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
-    <header>
     <div id="network"></div>
-    </header>
     <script type="text/javascript">
       var nodes = new vis.DataSet([
         //1~10:ジャンル名
@@ -449,7 +447,6 @@
             }
           }
       });
-
       var clicEventType=((window.ontouchstart!==null)? 'selectNode':'click');
       network.on('click', function(params) {
         //選択したノードのIDを取得
@@ -502,7 +499,11 @@
         
         //共通の関数select_nodeを呼び出す
         select_node(selectedNodeId);
-      });     
+      });
+      
+      function reset(){
+        autoCompleteJS.input.value = "";
+      }
     </script>
 
     <div id="add">
