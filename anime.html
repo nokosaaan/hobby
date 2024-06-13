@@ -12,6 +12,7 @@
 
 <body>
     <input type="text" placeholder="ノード検索" id="autoComplete" class="search" onChange=select_node(this.value)>
+    <input type="submit" value="検索" id="box">
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
     <header>
     <div id="network"></div>
@@ -446,7 +447,6 @@
           }
       });
 
-
       network.on("selectNode", function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
@@ -477,7 +477,15 @@
           network.fit();
         }
       }
+
+      function keydown(e){
+        if(e.keyCode === 13){
+          var obj = document.activeElement;
+          obj.nextElementSibling.focus();
+        }
+      }
     </script>
+
     <div id="add">
       <h2>hello</h2>
     </div>

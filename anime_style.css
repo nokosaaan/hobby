@@ -5,8 +5,20 @@
     height: 800px;
     border: 1px solid #000;
     margin: 40px;
+}
+#box{
+    width: 50px;
+    height: 30px;
+    padding: 0 10px;
+    border-radius: 10px;
+    color: #ff769d;
+    background: white;
+    border: 1px solid #ff769d;
+}
 
-    
+#box:hover{
+    background: #ff769d;
+    color: white;
 }
 @media(max-width: 800px){
     #network{
