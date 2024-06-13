@@ -108,7 +108,7 @@
         content: "";
         position: absolute;
         top: -25px;
-        left: 200px;
+        left: 240px;
         width: 3px; /* 棒の幅（太さ） */
         height: 30px; /* 棒の高さ */
         background: #b6a9a9;

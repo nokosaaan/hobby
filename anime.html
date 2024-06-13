@@ -447,7 +447,7 @@
             }
           }
       });
-      var clicEventType=((window.ontouchstart!==null)? 'selectNode':'click');
+      
       network.on('click', function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
@@ -502,6 +502,14 @@
         }
       });
       network2.on('selectNode', function(params) {
+        //選択したノードのIDを取得
+        let selectedNodeId = params.nodes[0];
+        
+        //共通の関数select_nodeを呼び出す
+        select_node(selectedNodeId);
+      });
+
+      network.on('hold', function(params) {
         //選択したノードのIDを取得
         let selectedNodeId = params.nodes[0];
         
