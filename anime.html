@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <title>Home</title>
+    <title>AnimeRoadMap</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="anime_style.css">
@@ -389,12 +389,13 @@
         edges: edges
       };
       var options = {
-        autoResize: true,
+        //autoResize: true,
         nodes:{
-          //shapeProperties:{useBorderWithImage: true},
           color:{
             highlight: 'orange',
           },
+          shapeProperties: {useBorderWithImage: true,},
+          borderWidthSelected: 10,
         },
         edges:{
           color:{
