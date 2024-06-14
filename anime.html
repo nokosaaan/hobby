@@ -301,7 +301,7 @@
         autoResize: true,
         nodes:{
           color:{
-            highlight: 'red',
+            highlight: 'orange',
           },
         },
         edges:{
@@ -452,6 +452,16 @@
       function Button(){
         var code = document.getElementById('autoComplete').value;
         select_node(code);
+      }
+
+      //Enterキー押下時に発動
+      const code2 = document.getElementById('autoComplete');
+      code2.addEventListener('keydown',keydown_event);
+      function keydown_event(e){
+        if(e.key === 'Enter'){
+          select_node(code2.value);
+        }
+        return false;
       }
 
       //var clickEventType = (( window.ontouchstart!==null ) ? 'click':'hold');

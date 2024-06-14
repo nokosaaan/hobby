@@ -51,8 +51,8 @@
 
   @media(max-width: 1250px){
     #network{
-        width:  750px;
-        height: 400px;
+        width:  80%;
+        height: 600px;
         border: 1px solid #000;
         margin: 35px;
     }        
@@ -89,8 +89,8 @@
 
 @media(max-width: 800px){
     #network{
-        width:  550px;
-        height: 300px;
+        width:  80%;
+        height: 500px;
         border: 1px solid #000;
         margin: 35px;
     }        
@@ -126,8 +126,8 @@
 
 @media(max-width: 600px){
     #network{
-        width:  440px;
-        height: 280px;
+        width:  80%;
+        height: 350px;
         border: 1px solid #000;
         margin: 30px;
     }
@@ -163,8 +163,8 @@
 
 @media(max-width: 540px){
     #network{
-        width:  310px;
-        height: 260px;
+        width:  80%;
+        height: 300px;
         border: 1px solid #000;
         margin: 20px;
     }
@@ -200,8 +200,8 @@
 
 @media(max-width: 360px){
     #network{
-        width:  250px;
-        height: 240px;
+        width:  80%;
+        height: 260px;
         border: 1px solid #000;
         margin: 30px;
     }
