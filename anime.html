@@ -139,6 +139,14 @@
         {id: 20090, label: '緋弾のアリア', shape: 'image', image:"image/anime/20090.png", group:1, click:"https://www.tbs.co.jp/anime/aria/" },
         {id: 20091, label: '緋弾のアリアAA', shape: 'image', image:"image/anime/20091.png", group:1, click:"http://ariaaa.tv/" },
         {id: 20092, label: '脳コメ', shape: 'image', image:"image/anime/20092.png", group:1, click:"http://noucome.jp/" },
+        {id: 20093, label: 'これゾン', shape: 'image', image:"image/anime/20093.png", group:1, click:"https://fantasiabunko.jp/sp/201006zombie/" },
+        {id: 20094, label: 'これゾン2', shape: 'image', image:"image/anime/20094.jpg", group:1, click:"https://anime.eiga.com/program/102648/" },
+        {id: 20095, label: 'かんなぎ', shape: 'image', image:"image/anime/20095.jpg", group:1, click:"https://www.nagisama-fc.com/anime/" },
+        {id: 20096, label: '政リベ', shape:'image', image:"image/anime/20096.png", group:1, click:"https://masamune-tv.com/1st/"},
+        {id: 20097, label: '政リベR', shape:'image', image:"image/anime/20097.png", group:1, click:"https://masamune-tv.com/"},
+        {id: 20098, label: 'そらのおとしもの', shape:'image', image:"image/anime/20098.png", group:1, click:"https://columbia.jp/soraoto/index.html"},
+        {id: 20099, label: 'そらのおとしものf', shape:'image', image:"image/anime/20099.png", group:1, click:"https://www.bs11.jp/anime/f-1/"},
+        {id: 20100, label: '迷い猫', shape:'image', image:"image/anime/20100.jpg", group:1, click:"https://www.at-x.com/program/detail/8823"},
         {id: 100000, label: '空耳op', shape: 'circle', group:2, click:"https://www.youtube.com/watch?v=RKOqojoiqJc"},
         {id: 100001, label: '元高木さん', shape: 'circle', group:2, click:"https://shogakukan-comic.jp/book-series?cd=46612"},
         {id: 100002, label: 'op,ed集', shape: 'circle', group:2, click:"https://youtube.com/playlist?list=PLtdSPZNWT1Au2eUd2gFr1g5Asvc-ps8BR&si=TRAmLPXkC7AatWPT"},
@@ -149,6 +157,8 @@
         {id: 100007, label: 'fhána', shape: 'circle', group:3, value:2, click:"https://fhana.jp/"},
         {id: 100008, label: 'op,ed集', shape: 'circle', group:2, click:"https://youtube.com/playlist?list=PLjPFkB2dbgmvJX7IIm435rHc71Mki6m5l&si=SPeCya6T3NDzieWi"},
         {id: 100009, label: 'コンマイくん', shape: 'circle', group:2, value:2, click:"https://youtu.be/hWNBPuJIu6s?si=Wy63FQ2IQmaliHsx"},
+        //{id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
+        //{id: , label: '', shape:'circle', group:, value:, click:""},
       ]);
       var edges = new vis.DataSet([
         {from: 1, to: 2, arrows: 'to'},
@@ -176,6 +186,7 @@
         {from: 2, to: 20032, arrows: 'to'},
         {from: 2, to: 20046, arrows: 'to'},
         {from: 2, to: 20062, arrows: 'to'},
+        {from: 2, to: 20095, arrows: 'to'},
 
         {from: 3, to: 30, arrows: 'to'},
         {from: 3, to: 31, arrows: 'to'},
@@ -340,6 +351,18 @@
         {from: 20, to: 20092, arrows: 'to'},
         {from: 22, to: 20092, arrows: 'to'},
 
+        {from: 20, to: 20093, arrows: 'to'},
+        {from: 22, to: 20094, arrows: 'to'},
+        {from: 20093, to: 20094, arrows: 'to'},
+
+        {from: 20, to: 20095, arrows: 'to'},
+
+        {from: 20, to: 20098, arrows: 'to'},
+        {from: 22, to: 20098, arrows: 'to'},
+        {from: 20098, to: 20099, arrows: 'to'},
+
+        {from: 20, to: 20100, arrows: 'to'},
+        {from: 22, to: 20100, arrows: 'to'},
 
         {from: 100000, to: 20025, arrows: 'to'},
         
@@ -480,6 +503,14 @@
               "20090 : 緋弾のアリア (検索用:ひだんのありあ,hidan)",
               "20091 : 緋弾のアリアAA",
               "20092 : 俺の脳内選択肢が、学園ラブコメを全力で邪魔している (検索用: 脳コメ,のうコメ,noukome)",
+              "20093 : これはゾンビですか？ (検索用: これゾン,これぞん,koreha,korezon)",
+              "20094 : これはゾンビですか？ OF THE DEAD",
+              "20095 : かんなぎ (検索用:kannagi,nagi)",
+              "20096 : 政宗くんのリベンジ (検索用:まさむね,masamune,revenge)",
+              "20097 : 政宗くんのリベンジR",
+              "20098 : そらのおとしもの (検索用:そらおと,soraoto)",
+              "20099 : そらのおとしものf",
+              "20100 : 迷い猫オーバーラン！ (検索用:まよいねこ,mayoineko,おーばーらん,overrun)",
               "100000 : 空耳op",
               "100001 : からかい上手の元高木さん",
               "100002 : からかい上手の高木さん op,ed集",
