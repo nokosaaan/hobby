@@ -37,12 +37,15 @@
         {id: 6, label: '泣き'},
         {id: 7, label: 'ファンタジー'},
         {id: 8, label: 'ギャグ'},
-        {id: 9, label: 'その他'},
+        {id: 9, label: '青春'},
+        {id: 10, label: 'その他'},
         {id: 20, label: 'ラブコメ'},
         {id: 21, label: '家族愛'},
         {id: 22, label: 'ハーレム'},
         {id: 23, label: '妹'},
+        {id: 24, label: '百合'},
         {id: 30, label: '無双'},
+        {id: 31, label: '銃'},
         {id: 20000, label: 'とらドラ！', shape: 'image', image:"image/anime/20000.jpg", group:1, click:"https://www.tv-tokyo.co.jp/anime/toradora/"},
         {id: 20001, label: '凪あす', shape: 'image', image:"image/anime/20001.png", group:1, click:"http://www.nagiasu.jp/story/index.html#story-00"},
         {id: 20002, label: 'true tears', shape: 'image', image:"image/anime/20002.jpg", group:1, click:"http://www.truetears.jp/"},
@@ -121,6 +124,21 @@
         {id: 20075, label: 'もっと To LOVEる', shape: 'image', image:"image/anime/20075.jpg", group:1, click:"https://www.tbs.co.jp/tbs-ch/item/a0143/"},
         {id: 20076, label: 'To LOVEる ダークネス', shape: 'image', image:"image/anime/20076.jpg", group:1, click:"https://www.tbs.co.jp/tbs-ch/item/a0146/"},
         {id: 20077, label: 'To LOVEる ダークネス2nd', shape: 'image', image:"image/anime/20077.png", group:1, click:"https://www.tbs.co.jp/tbs-ch/item/a0236/"},
+        {id: 20078, label: '冴えカノ', shape: 'image', image:"image/anime/20078.jpg", group:1, click:"https://www.saenai.tv/1st/"},
+        {id: 20079, label: '冴えカノ♭', shape: 'image', image:"image/anime/20079.jpg", group:1, click:"https://www.saenai.tv/"},
+        {id: 20080, label: '冴えカノ fine', shape: 'image', image:"image/anime/20080.jpg", group:1, click:"https://saenai-movie.com/" },
+        {id: 20081, label: 'stb', shape: 'image', image:"image/anime/20081.png", group:1, click:"http://www.strike-the-blood.com/" },
+        {id: 20082, label: 'stb_OVA1', shape: 'image', image:"image/anime/20082.png", group:1, click:"http://www.strike-the-blood.com/first/#/homepage" },
+        {id: 20083, label: 'stb_OVA2', shape: 'image', image:"image/anime/20083.png", group:1, click:"http://www.strike-the-blood.com/second/" },
+        {id: 20084, label: 'stb_OVA3', shape: 'image', image:"image/anime/20084.png", group:1, click:"http://www.strike-the-blood.com/third/" },
+        {id: 20085, label: 'stb_OVAspecial', shape: 'image', image:"image/anime/20085.jpg", group:1, click:"http://www.strike-the-blood.com/specialova/" },
+        {id: 20086, label: 'stb_OVA4', shape: 'image', image:"image/anime/20086.png", group:1, click:"http://www.strike-the-blood.com/fourth/" },
+        {id: 20087, label: 'stb_OVA5', shape: 'image', image:"image/anime/20087.jpg", group:1, click:"http://www.strike-the-blood.com/final/" },
+        {id: 20088, label: '変好き', shape: 'image', image:"image/anime/20088.jpg", group:1, click:"https://hensuki.com/" },
+        {id: 20089, label: '六畳間', shape: 'image', image:"image/anime/20089.png", group:1, click:"https://corona106.tv/" },
+        {id: 20090, label: '緋弾のアリア', shape: 'image', image:"image/anime/20090.png", group:1, click:"https://www.tbs.co.jp/anime/aria/" },
+        {id: 20091, label: '緋弾のアリアAA', shape: 'image', image:"image/anime/20091.png", group:1, click:"http://ariaaa.tv/" },
+        {id: 20092, label: '脳コメ', shape: 'image', image:"image/anime/20092.png", group:1, click:"http://noucome.jp/" },
         {id: 100000, label: '空耳op', shape: 'circle', group:2, click:"https://www.youtube.com/watch?v=RKOqojoiqJc"},
         {id: 100001, label: '元高木さん', shape: 'circle', group:2, click:"https://shogakukan-comic.jp/book-series?cd=46612"},
         {id: 100002, label: 'op,ed集', shape: 'circle', group:2, click:"https://youtube.com/playlist?list=PLtdSPZNWT1Au2eUd2gFr1g5Asvc-ps8BR&si=TRAmLPXkC7AatWPT"},
@@ -141,11 +159,13 @@
         {from: 1, to: 7, arrows: 'to'},
         {from: 1, to: 8, arrows: 'to'},
         {from: 1, to: 9, arrows: 'to'},
+        {from: 1, to: 10, arrows: 'to'},
 
         {from: 2, to: 20, arrows: 'to'},
         {from: 2, to: 21, arrows: 'to'},
         {from: 2, to: 22, arrows: 'to'},
         {from: 2, to: 23, arrows: 'to'},
+        {from: 2, to: 24, arrows: 'to'},
         {from: 2, to: 20000, arrows: 'to'},
         {from: 20000, to: 20008, arrows: 'to'},
         {from: 2, to: 20001, arrows: 'to'},
@@ -158,7 +178,10 @@
         {from: 2, to: 20062, arrows: 'to'},
 
         {from: 3, to: 30, arrows: 'to'},
+        {from: 3, to: 31, arrows: 'to'},
         {from: 3, to: 20058, arrows: 'to'},
+        {from: 3, to: 20081, arrows: 'to'},
+        {from: 3, to: 20089, arrows: 'to'},
 
         {from: 8, to: 20048, arrows: 'to'},
         {from: 8, to: 20049, arrows: 'to'},
@@ -288,6 +311,36 @@
         {from: 20075, to: 20076, arrows: 'to'},
         {from: 20076, to: 20077, arrows: 'to'},
 
+        {from: 20, to: 20078, arrows: 'to'},
+        {from: 22, to: 20078, arrows: 'to'},
+        {from: 20078, to: 20079, arrows: 'to'},
+        {from: 20079, to: 20080, arrows: 'to'},
+
+        {from: 22, to: 20081, arrows: 'to'},
+        {from: 22, to: 20081, arrows: 'to'},
+        {from: 20081, to: 20082, arrows: 'to'},
+        {from: 20082, to: 20083, arrows: 'to'},
+        {from: 20083, to: 20084, arrows: 'to'},
+        {from: 20084, to: 20085, arrows: 'to'},
+        {from: 20085, to: 20086, arrows: 'to'},
+        {from: 20086, to: 20087, arrows: 'to'},
+
+        {from: 20, to: 20088, arrows: 'to'},
+        {from: 22, to: 20088, arrows: 'to'},
+
+        {from: 20, to: 20089, arrows: 'to'},
+        {from: 22, to: 20089, arrows: 'to'},
+
+        {from: 20, to: 20090, arrows: 'to'},
+        {from: 22, to: 20090, arrows: 'to'},
+        {from: 31, to: 20090, arroes: 'to'},
+        {from: 20090, to: 20091, arrows: 'to'},
+        {from: 24, to: 20091, arrows: 'to'},
+
+        {from: 20, to: 20092, arrows: 'to'},
+        {from: 22, to: 20092, arrows: 'to'},
+
+
         {from: 100000, to: 20025, arrows: 'to'},
         
       ]);
@@ -300,6 +353,7 @@
       var options = {
         autoResize: true,
         nodes:{
+          //shapeProperties:{useBorderWithImage: true},
           color:{
             highlight: 'orange',
           },
@@ -311,17 +365,7 @@
         },
       };
       var network = new vis.Network(container, data, options);
-      /*
-      network.on("click", function(params) {
-        if (params.nodes.length == 1) {
-          var nodeId = params.nodes[0];
-          var node = nodes.get(nodeId);
-          if(nodeId>=20000){
-            open(node.click,"_blank");
-          }
-        }
-      });
-      */
+      
       const autoCompleteJS = new autoComplete({
           placeHolder: "Search for Node...",
           data: {
@@ -334,12 +378,15 @@
               "6 : 泣き",
               "7 : ファンタジー",
               "8 : ギャグ",
-              "9 : その他",
+              "9 : 青春",
+              "10 : その他",
               "20 : ラブコメ",
               "21 : 家族愛",
               "22 : ハーレム",
               "23 : 妹",
+              "24 : 百合",
               "30 : 無双",
+              "31 : 銃",
               "20000 : とらドラ！ (検索用: toradora)",
               "20001 : 凪のあすから (検索用: nagiasu)",
               "20002 : true tears",
@@ -376,7 +423,7 @@
               "20033 : 彼女、お借りします (検索用: kanokari,かのかり,千鶴,墨ちゃん,ルカ)",
               "20034 : 彼女、お借りします 第2期",
               "20035 : 彼女、お借りします 第3期",
-              "20036 : やはり俺の青春ラブコメはまちがっている。(検索用: 俺ガイル,比企谷,いろはす,ゆきのん)",
+              "20036 : やはり俺の青春ラブコメはまちがっている。(検索用: やはり,おれの,俺ガイル,比企谷,いろはす,ゆきのん)",
               "20037 : やはり俺の青春ラブコメはまちがっている。 続",
               "20038 : やはり俺の青春ラブコメはまちがっている。 完",
               "20039 : 五等分の花嫁 (検索用: ごとよめ,gotoyome,)",
@@ -388,15 +435,15 @@
               "20045 : エロマンガ先生 (検索用: ero,和泉紗霧,ラノベ)",
               "20046 : Just Because!",
               "20047 : ゲーマーズ! (検索用: gamers,勘違い)",
-              "20048 : 月刊少女野崎くん (検索用: gekkan,パラス,オーイシマサヨシ,大石昌良)",
-              "20049 : WORKING!! (検索用: 小鳥遊,ぽぷら,ワグナリア,お仕事)",
+              "20048 : 月刊少女野崎くん (検索用: げっかん,gekkan,パラス,オーイシマサヨシ,大石昌良)",
+              "20049 : WORKING!! (検索用: わーきんぐ,小鳥遊,ぽぷら,ワグナリア,お仕事)",
               "20050 : WORKING’!!",
               "20051 : WORKING!!!",
-              "20052 : 僕らはみんな河合荘 (検索用: bokura)",
-              "20053 : バカとテストと召喚獣 (検索用: バカテス,baka)",
+              "20052 : 僕らはみんな河合荘 (検索用: ぼくら,bokura)",
+              "20053 : バカとテストと召喚獣 (検索用: ばかてす,バカテス,baka)",
               "20054 : バカとテストと召喚獣 にっ!",
               "20055 : 寄宿学校のジュリエット (検索用: juliet,kisyuku,kishuku)",
-              "20056 : 僕は友達が少ない (検索用: はがない,haganai,bokuha)",
+              "20056 : 僕は友達が少ない (検索用: ぼくは,はがない,haganai,bokuha)",
               "20057 : 僕は友達が少ない NEXT",
               "20058 : IS <インフィニット・ストラトス>",
               "20059 : IS <インフィニット・ストラトス>2",
@@ -418,6 +465,21 @@
               "20075 : もっとToLOVEる -とらぶる-",
               "20076 : ToLOVEる ダークネス",
               "20077 : ToLOVEる ダークネス2nd",
+              "20078 : 冴えない彼女の育てかた (検索用:冴えカノ,saekano,さえない,金髪ツインテ)",
+              "20079 : 冴えない彼女の育てかた♭",
+              "20080 : 冴えない彼女の育てかた fine",
+              "20081 : ストライク・ザ・ブラッド (検索用:strike,suto,ストブラ,stb)",
+              "20082 : ストライク・ザ・ブラッド OVA",
+              "20083 : ストライク・ザ・ブラッド OVAII",
+              "20084 : ストライク・ザ・ブラッド OVAIII",
+              "20085 : ストライク・ザ・ブラッド OVAspecial",
+              "20086 : ストライク・ザ・ブラッド OVAIV",
+              "20087 : ストライク・ザ・ブラッド OVAV",
+              "20088 : 可愛ければ変態でも好きになってくれますか？ (検索用:変好き,hensuki,へんすき)",
+              "20089 : 六畳間の侵略者！？ (検索用:ろくじょうかん,rokujoukan)",
+              "20090 : 緋弾のアリア (検索用:ひだんのありあ,hidan)",
+              "20091 : 緋弾のアリアAA",
+              "20092 : 俺の脳内選択肢が、学園ラブコメを全力で邪魔している (検索用: 脳コメ,のうコメ,noukome)",
               "100000 : 空耳op",
               "100001 : からかい上手の元高木さん",
               "100002 : からかい上手の高木さん op,ed集",
@@ -438,6 +500,7 @@
           events: {
             input: {
               selection: (event) => {
+                //nodeIdを格納
                 const selection = event.detail.selection.value;
                 //const regex = /[^0-9]/g;
                 //const result = selection.replace(regex, "");
