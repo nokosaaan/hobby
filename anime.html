@@ -29,6 +29,8 @@
         //70000~79999:ファンタジー作品
         //80000~89999:その他
         //100000~:他リンク
+
+        //ジャンル
         {id: 1, label: 'ジャンル'},
         {id: 2, label: '恋愛'},
         {id: 3, label: 'アクション'},
@@ -39,6 +41,10 @@
         {id: 8, label: 'ギャグ'},
         {id: 9, label: '青春'},
         {id: 10, label: 'その他'},
+
+
+
+        //ジャンル要素
         {id: 20, label: 'ラブコメ'},
         {id: 21, label: '家族愛'},
         {id: 22, label: 'ハーレム'},
@@ -55,6 +61,13 @@
         {id: 40, label: 'きらら'},
         {id: 41, label: '旅行'},
         {id: 90, label: '部活'},
+        {id: 91, label: '学園系'},
+        {id: 92, label: 'お仕事系'},
+        {id: 100, label: 'ミステリー'},
+
+
+
+        //恋愛作品
         {id: 20000, label: 'とらドラ！', shape: 'image', image:"image/anime/20000.jpg", group:1, click:"https://www.tv-tokyo.co.jp/anime/toradora/"},
         {id: 20001, label: '凪あす', shape: 'image', image:"image/anime/20001.png", group:1, click:"http://www.nagiasu.jp/story/index.html#story-00"},
         {id: 20002, label: 'true tears', shape: 'image', image:"image/anime/20002.jpg", group:1, click:"http://www.truetears.jp/"},
@@ -172,6 +185,9 @@
         {id: 20114, label: '桜Trick', shape:'image', image:"image/anime/20114.png", group:1, click:"https://www.tbs.co.jp/anime/sakura/"},
         {id: 20115, label: '終末のイゼッタ', shape:'image', image:"image/anime/20115.png", group:1, click:"https://sh-anime.shochiku.co.jp/izetta/"},
 
+
+
+        //アクション作品
         {id: 30000, label: 'Fate/stay night', shape:'image', image:"image/anime/30000.png", group:1, click:"https://www.fate-sn.jp/"},
         {id: 30001, label: 'Fate/stay night UBW', shape:'image', image:"image/anime/30001.png", group:1, click:"https://www.fate-sn.com/ubw/"},
         {id: 30002, label: 'Fate/stay night HF I', shape:'image', image:"image/anime/30002.jpg", group:1, click:"https://www.fate-sn.com/1st/"},
@@ -267,23 +283,26 @@
         {id: 30092, label: 'ジョジョの奇妙な冒険 GW', shape:'image', image:"image/anime/30092.jpg", group:1, click:"https://jojo-portal.com/anime/gw/"},
         {id: 30093, label: 'ジョジョの奇妙な冒険 SO', shape:'image', image:"image/anime/30093.webp", group:1, click:"https://jojo-portal.com/anime/so/"},
         
+
+
+        //日常作品
         {id: 40000, label: 'けいおん!', shape:'image', image:"image/anime/40000.webp", group:1, click:"https://www.tbs.co.jp/anime/k-on/index-j.html"},
         {id: 40001, label: 'けいおん!!', shape:'image', image:"image/anime/40001.webp", group:1, click:"https://www.tbs.co.jp/anime/k-on/k-on_tv/index-j.html"},
         {id: 40002, label: '映画けいおん!', shape:'image', image:"image/anime/40002.jpg", group:1, click:"https://www.tbs.co.jp/anime/k-on/k-on_mv/index-j.html"},
         {id: 40003, label: 'らき☆すた', shape:'image', image:"image/anime/40003.jpg", group:1, click:"https://www.kyotoanimation.co.jp/works/luckystar/"},
-        {id: 40004, label: '氷菓', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40005, label: 'がっこうぐらし!', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40006, label: 'たまこまーけっと', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40007, label: 'ゆるキャン△', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40008, label: 'ゆるキャン△ season2', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40009, label: 'ゆるキャン△ season3', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40010, label: 'ARIA The ANIMATION', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40011, label: 'ARIA The NATURAL', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40012, label: 'ARIA The OVA ～ARIETTA～', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40013, label: 'ARIA The ORIGINATION', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40014, label: 'ARIA The AVVENIRE', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40015, label: 'ARIA The CREPUSCOLO', shape:'image', image:"image/anime/", group:1, click:""},
-        {id: 40016, label: 'ARIA The BENEDIZIONE', shape:'image', image:"image/anime/", group:1, click:""},
+        {id: 40004, label: '氷菓', shape:'image', image:"image/anime/40004.png", group:1, click:"https://www.kyotoanimation.co.jp/kotenbu/"},
+        {id: 40005, label: 'がっこうぐらし!', shape:'image', image:"image/anime/40005.png", group:1, click:"https://gakkougurashi.com/"},
+        {id: 40006, label: 'たまこまーけっと', shape:'image', image:"image/anime/40006.jpg", group:1, click:"https://tamakomarket.com/"},
+        {id: 40007, label: 'ゆるキャン△', shape:'image', image:"image/anime/40007.jpg", group:1, click:"https://yurucamp.jp/first/"},
+        {id: 40008, label: 'ゆるキャン△ season2', shape:'image', image:"image/anime/40008.jpg", group:1, click:"https://yurucamp.jp/second/"},
+        {id: 40009, label: 'ゆるキャン△ season3', shape:'image', image:"image/anime/40009.jpg", group:1, click:"https://yurucamp.jp/third/"},
+        {id: 40010, label: 'ARIA The ANIMATION', shape:'image', image:"image/anime/40010.jpg", group:1, click:"https://ariacompany.net/1st/story.html"},
+        {id: 40011, label: 'ARIA The NATURAL', shape:'image', image:"image/anime/40011.png", group:1, click:"https://ariacompany.net/2nd/story.html"},
+        {id: 40012, label: 'ARIA The OVA ～ARIETTA～', shape:'image', image:"image/anime/40012.png", group:1, click:"https://ariacompany.net/3rd/dvd_ova.html"},
+        {id: 40013, label: 'ARIA The ORIGINATION', shape:'image', image:"image/anime/40013.webp", group:1, click:"https://ariacompany.net/3rd/index2.htm"},
+        {id: 40014, label: 'ARIA The AVVENIRE', shape:'image', image:"image/anime/40014.jpg", group:1, click:"https://ariacompany.net/4th/"},
+        {id: 40015, label: 'ARIA The CREPUSCOLO', shape:'image', image:"image/anime/40015.jpg", group:1, click:"https://ariacompany.net/5th/"},
+        {id: 40016, label: 'ARIA The BENEDIZIONE', shape:'image', image:"image/anime/40016.jpg", group:1, click:"https://ariacompany.net/"},
         {id: 40017, label: 'きんいろモザイク', shape:'image', image:"image/anime/", group:1, click:""},
         {id: 40018, label: 'ハロー!!きんいろモザイク', shape:'image', image:"image/anime/", group:1, click:""},
         {id: 40019, label: 'ふらいんぐうぃっち', shape:'image', image:"image/anime/", group:1, click:""},
@@ -624,12 +643,20 @@
 
         {from: 4, to: 40, arrows: 'to'},
         {from: 4, to: 41, arrows: 'to'},
-
+        {from: 4, to: 40003, arrows: 'to'},
+        {from: 4, to: 40004, arrows: 'to'},
+        {from: 4, to: 40006, arrows: 'to'},
+        {from: 4, to: 400010, arrows: 'to'},
+        
         {from: 8, to: 20048, arrows: 'to'},
         {from: 8, to: 20049, arrows: 'to'},
         {from: 8, to: 20053, arrows: 'to'},
 
         {from: 9, to: 90, arrows: 'to'},
+        {from: 9, to: 91, arrows: 'to'},
+        {from: 9, to: 92, arrows: 'to'},
+
+        {from: 10, to: 100, arrows: 'to'},
 
         {from: 20, to: 20005, arrows: 'to'},
 
@@ -965,6 +992,28 @@
         {from: 30090, to: 30091, arrows: 'to'},
         {from: 30091, to: 30092, arrows: 'to'},
         {from: 30092, to: 30093, arrows: 'to'},
+
+        {from: 40, to: 40000, arrows: 'to'},
+        {from: 90, to: 40000, arrows: 'to'},
+        {from: 40000, to: 40001, arrows: 'to'},
+        {from: 40001, to: 40002, arrows: 'to'},
+
+        {from: 90, to: 40004, arrows: 'to'},
+        {from: 100, to: 40004, arrows: 'to'},
+
+        {from: 40, to: 40005, arrows: 'to'},
+        {from: 90, to: 40005, arrows: 'to'},
+
+        {from: 40, to: 40007, arrows: 'to'},
+        {from: 40007, to: 40008, arrows: 'to'},
+        {from: 40008, to: 40009, arrows: 'to'},
+
+        {from: 40010, to: 40011, arrows: 'to'},
+        {from: 40011, to: 40012, arrows: 'to'},
+        {from: 40012, to: 40013, arrows: 'to'},
+        {from: 40013, to: 40014, arrows: 'to'},
+        {from: 40014, to: 40015, arrows: 'to'},
+        {from: 40015, to: 40016, arrows: 'to'},  
         
         {from: 100000, to: 20025, arrows: 'to'},
         
@@ -1021,6 +1070,9 @@
               "37 : ゾンビ",
               "40 : きらら",
               "41 : 旅行",
+              "90 : 部活",
+              "91 : 学園系",
+              "92 : お仕事系",
               "20000 : とらドラ！ (検索用: toradora)",
               "20001 : 凪のあすから (検索用: nagiasu)",
               "20002 : true tears",
@@ -1231,6 +1283,23 @@
               "30091 : 岸辺露伴は動かない (検索用: kishiberohan,4部,スピンオフ)",
               "30092 : ジョジョの奇妙な冒険 黄金の風 (検索用: 5部)",
               "30093 : ジョジョの奇妙な冒険 ストーンオーシャン (検索用: 6部)",
+              "40000 : けいおん! (検索用: k-on!)",
+              "40001 : けいおん!!",
+              "40002 : 劇場版けいおん!",
+              "40003 : らき☆すた (検索用: lucky-star,rakisuta,らきすた)",
+              "40004 : 氷菓 (検索用: ひょうか,hyoka)",
+              "40005 : がっこうぐらし! (検索用: gakkou,gurashi)",
+              "40006 : たまこまーけっと (検索用: tamako,market)",
+              "40007 : ゆるキャン△ (検索用: yuru,camp,ゆるきゃん)",
+              "40008 : ゆるキャン△ season2",
+              "40009 : ゆるキャン△ season3",
+              "40010 : ARIA The ANIMATION (検索用: ありあ)",
+              "40011 : ARIA The NATURAL",
+              "40012 : ARIA The OVA ～ARIETTA～",
+              "40013 : ARIA The ORIGINATION",
+              "40014 : ARIA The AVVENIRE",
+              "40015 : ARIA The CREPUSCOLO",
+              "40016 : ARIA The BENEDIZIONE",
               "100000 : 空耳op",
               "100001 : からかい上手の元高木さん",
               "100002 : からかい上手の高木さん op,ed集",
