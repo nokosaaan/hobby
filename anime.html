@@ -16,6 +16,61 @@
     <input type="button" value="検索" id="box" onclick=Button()>
     <span class="batsu" onclick=reset()></span>    
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+    <details>
+      <summary>説明</summary>
+      <ul>
+        <li>使い方</li>
+          <p id="caution">ロードに20～30秒ほど時間がかかります。ご了承ください。</p>
+          <p>上部の検索バーにキーワードを入力してください。検索候補に番号とワードが引っ掛かるはずなので</p>
+          <p>PCなら十字キーorクリックで選択,スマホならタップで選択してください。PC、スマホともにEnter、検索ボタン両方okです。</p>
+          <p>ノードを数字で管理している都合上、キーワードをそのまま検索にかけても反応しないので注意してください。</p>
+          <p>実行すると、目的のノードに移動します。このとき、目的のノードは画面中央で注目状態となっていますが、ネットワークがズームアウト状態(全体が見えている状態)だと見えにくいため、予め拡大しておくことをお勧めします。(PCは領域内でホイールでスクロール、スマホは2本指で拡大)</p>
+          <p>ノードとノードを繋ぐ矢印があると思いますが、直接繋がっているノード程関連度が高くなっています。</p>
+          <p>画像をクリックorタップすると公式サイトに飛びます。</p>
+          <p>キーワードを変更したいときは、検索バーの×ボタンを押すとリセットされます(有効範囲が狭いので頑張ってエイム合わせてください)</p>
+          <p>2024年6月頃(～<span id="real-time"></span>現在まで)、ニコニコ動画の大規模サイバー攻撃によりKADOKAWAドメインのサイトが一部利用できない状態です。</p>
+        <li>一覧</li>
+        <details>
+          <summary>展開する</summary>
+          <p>1 :ジャンル</p>
+          <p>2 : 恋愛</p>
+          <p>3 : アクション</p>
+          <p>4 : 日常</p>
+          <p>5 : 異世界</p>
+          <p>6 : 泣き</p>
+          <p>7 : ファンタジー</p>
+          <p>8 : ギャグ</p>
+          <p>9 : 青春</p>
+          <p>10 : その他</p>
+          <p>20 : ラブコメ</p>
+          <p>21 : 家族愛</p>
+          <p>22 : ハーレム</p>
+          <p>23 : 妹</p>
+          <p>24 : 百合</p>
+          <p>30 : 無双</p>
+          <p>31 : 銃</p>
+          <p>32 : バトル</p>
+          <p>33 : 剣</p>
+          <p>34 : ロボット</p>
+          <p>35 : 魔法少女</p>
+          <p>36 : SF</p>
+          <p>37 : ゾンビ</p>
+          <p>40 : きらら</p>
+          <p>41 : 旅行</p>
+          <p>42 : ジェネリックきらら</p>
+          <p>90 : 部活</p>
+          <p>91 : 学園系</p>
+          <p>92 : お仕事系</p>
+          <p>100 : ミステリー</p>
+          <p>101 : TS</p>
+          <p>20~29は2のジャンルの類似ジャンル、30~39は3の類似ジャンル…というようになっています。</p>
+          <p>各作品は親ジャンル(2~10)を最高位とする5~6桁の数字で表されます。</p>
+          <P>例：30026→鬼滅の刃 (ジャンル:バトル(32),剣(33))</P>
+        </details>
+        <li>おすすめ</li>
+        <p>まずはどんなアニメを見たいかを考えて、親ジャンル検索(2~10を入力)を行い、そこから伸びているノードで気になる作品があれば調べてみるという方法が一番合っていると思います。</p>
+      </ul>
+    </details>
     <div id="network"></div>
     <script type="text/javascript">
       var nodes = new vis.DataSet([
@@ -974,10 +1029,7 @@
         
         {from: 32, to: 30070, arrows: 'to'},
 
-        {from: 31, to: 30070, arrows: 'to'},
-        {from: 32, to: 30070, arrows: 'to'},
-        {from: 33, to: 30070, arrows: 'to'},
-
+        {from: 31, to: 30071, afrrows: 'to'},
         {from: 32, to: 30071, afrrows: 'to'},
         {from: 33, to: 30071, afrrows: 'to'},
 
@@ -1537,19 +1589,45 @@
       function reset(){
         autoCompleteJS.input.value = "";
       }
+
+      //現在時刻を表示する関数
+      function Time(){
+        var realtime = new Date();
+        var year = realtime.getFullYear();
+        var month = realtime.getMonth()+1;
+        var date = realtime.getDate();
+        var text = year + '/' + month + '/' + date + '/';
+        document.getElementById("real-time").innerHTML=text;
+      }
+      setInterval('Time()',1000);
+
     </script>
 
-    <div id="add">
-      <h2>hello</h2>
-    </div>
+    <h2>News</h2>
+        <div class="news" :class="{'scroll-hidden':!scrollNow}">
+          <div class="topic">
+            <div class="time">2024/06/24</div>
+            <div>説明文を追加</div>
+          </div>
+          <div class="topic">
+            <div class="time">2024/06/24</div>
+            <div>日常(4)まで追加、異世界(5)以降は後々</div>
+          </div>
+          <div class="topic">
+              <div class="time">2024/06/24</div>
+              <div>仮リリース</div>
+          </div>
+        </div>
 
     <script>
+      /*
       const paragraph = document.querySelector("h2");
       sel_con.addEventListener('click',updateh2);
       function updateh2(){
         const code = document.getElementById("autoComplete");
         paragraph.textContent=code.value+'が選ばれました.';
       }
+      */
     </script>
   </body>
 </html>
