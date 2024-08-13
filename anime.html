@@ -1836,7 +1836,7 @@
           let positions = network.getPositions([value]);
           let position = positions[value];
           //console.log(position);
-          let options = {position: position, animation: {duration: 500, easingFunction:'linear'}}; 
+          let options = {position: position, animation: {duration: 250, easingFunction:'linear'}}; 
           //選択したノードの位置に移動
           network.moveTo(options);
         }catch (error) {
