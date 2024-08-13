@@ -9,6 +9,7 @@ details{
     color: red;
   }
   ul{
+    margin:10px;
     li{
       font-weight: bold;
       font-size:28px;

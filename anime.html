@@ -56,9 +56,16 @@
           <p>35 : 魔法少女</p>
           <p>36 : SF</p>
           <p>37 : ゾンビ</p>
+          <p>38 : 戦争</p>
+          <p>39 : スパイ</p>
           <p>40 : きらら</p>
           <p>41 : 旅行</p>
           <p>42 : ジェネリックきらら</p>
+          <p>50 : 転生</p>
+          <p>51 : 転移</p>
+          <p>52 : 未分類</p>
+          <p>53 : 勇者召喚</p>
+          <p>54 : 現地</p>
           <p>90 : 部活</p>
           <p>91 : 学園系</p>
           <p>92 : お仕事系</p>
@@ -70,6 +77,9 @@
         </details>
         <li>おすすめ</li>
         <p>まずはどんなアニメを見たいかを考えて、親ジャンル検索(2~10を入力)を行い、そこから伸びているノードで気になる作品があれば調べてみるという方法が一番合っていると思います。</p>
+        <li>補足</li>
+        <p>アニメの続編があるのに表示されていないものがありますが、意図的に追加していないor最新情報を追えていないの2パターンあります</p>
+        <p>後者だと思った場合はご連絡ください。追加します。前者の場合は見なくても問題ないor宗教上存在しないものとして扱っているなのでご了承ください。</p>
       </ul>
     </details>
     <div id="network"></div>
@@ -489,8 +499,8 @@
         {id: 50069, label: 'ダンまちV', shape:'image', image:"image/anime/50069.jpg", group:1, click:"https://danmachi.com/"},
         {id: 50070, label: 'ソード・オラトリア', shape:'image', image:"image/anime/50070.png", group:1, click:"https://danmachi.com/sword_oratoria/"},
         {id: 50071, label: '不徳のギルド', shape:'image', image:"image/anime/50071.jpg", group:1, click:"https://futoku-no-anime.com/"},
+        {id: 50072, label: 'まおゆう魔王勇者', shape:'image', image:"image/anime/50072.png", group:1, click:"https://maoyu.jp/"},
         /*
-        {id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
         {id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
         {id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
         {id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
@@ -5476,6 +5486,8 @@
 
         {from: 54, to: 50071, arrows: 'to'},
 
+        {from: 54, to: 50072, arrows: 'to'},
+
         {from: 100000, to: 20025, arrows: 'to'},
 
 
@@ -6241,6 +6253,14 @@
 
     <h2>News</h2>
         <div class="news" :class="{'scroll-hidden':!scrollNow}">
+          <div class="topic">
+            <div class="time">2024/08/14</div>
+            <div>説明文を更新</div>
+          </div>
+          <div class="topic">
+            <div class="time">2024/08/14</div>
+            <div>異世界(5)まで追加</div>
+          </div>
           <div class="topic">
             <div class="time">2024/06/24</div>
             <div>説明文を追加</div>
