@@ -9,11 +9,11 @@ details{
     color: red;
   }
   ul{
-    margin:10px;
+    margin:1px;
     li{
       font-weight: bold;
       font-size:28px;
-      margin: 5px;
+      margin-top: 10px;
     }
   }
   
