@@ -69,6 +69,7 @@
           <p>60 : Key作品</p>
           <p>61 : 鬱</p>
           <p>62 : グロ</p>
+          <p>70 : 歴史</p>
           <p>90 : 部活</p>
           <p>91 : 学園系</p>
           <p>92 : お仕事系</p>
@@ -142,6 +143,7 @@
         {id: 60, label: 'Key作品'},
         {id: 61, label: '鬱'},
         {id: 62, label: 'グロ'},
+        {id: 70, label: '歴史'},
         {id: 90, label: '部活'},
         {id: 91, label: '学園系'},
         {id: 92, label: 'お仕事系'},
@@ -510,7 +512,7 @@
         {id: 50070, label: 'ソード・オラトリア', shape:'image', image:"image/anime/50070.png", group:1, click:"https://danmachi.com/sword_oratoria/"},
         {id: 50071, label: '不徳のギルド', shape:'image', image:"image/anime/50071.jpg", group:1, click:"https://futoku-no-anime.com/"},
         {id: 50072, label: 'まおゆう魔王勇者', shape:'image', image:"image/anime/50072.png", group:1, click:"https://maoyu.jp/"},
-        
+        {id: 50073, label: 'ゴブスレ', shape:'image', image:"image/anime/50073.png", group:1, click:"https://goblinslayer.jp/1st/"},
 
 
 
@@ -671,6 +673,7 @@
         {from: 6, to: 60037, arrows: 'to'},
         {from: 6, to: 60038, arrows: 'to'},
 
+        {from: 7, to: 70, arrows: 'to'},
         {from: 7, to: 40045, arrows: 'to'},
         {from: 7, to: 40053, arrows: 'to'},
         {from: 7, to: 50072, arrows: 'to'},
@@ -1238,7 +1241,9 @@
         {from: 50065, to: 50070, arrows: 'to'},
 
         {from: 54, to: 50071, arrows: 'to'},
-        
+
+        {from: 54, to: 50073, arrows: 'to'},
+
 
         {from: 60, to: 60000, arrows: 'to'},
 
@@ -1352,6 +1357,7 @@
               "60 : Key作品",
               "61 : 鬱",
               "62 : グロ",
+              "70 : 歴史",
               "90 : 部活",
               "91 : 学園系",
               "92 : お仕事系",
@@ -1701,6 +1707,7 @@
               "50070 : ソード・オラトリア ダンジョンに出会いを求めるのは間違っているだろうか外伝",
               "50071 : 不徳のギルド (検索用:hutoku,guild,ふとく)",
               "50072 : まおゆう魔王勇者 (検索用: maoyuu)",
+              "50073 : ゴブリンスレイヤー (検索用: ゴブスレ,goburin)",
               "60000 : AIR (検索用: えあー,鳥の詩,国歌)",
               "60001 : あの日見た花の名前を僕達はまだ知らない。 (検索用: あの花)",
               "60002 : ヴァイオレットエヴァーガーデン (検索用: 京アニ)",
@@ -1740,6 +1747,51 @@
               "60036 : 終末なにしてますか？忙しいですか？救ってもらっていいですか？ (検索用:すかすか,sukasuka)",
               "60037 : さよならの朝に約束の花をかざろう (検索用:さよなら,さよ朝,sayoasa,sayonara)",
               "60038 : カールじいさんの空飛ぶ家 (検索:かーる)",
+              "70000 : 狼と香辛料 (検索用:ookami,kousinnryou,おおかみ)",
+              "70001 : 狼と香辛料II",
+              "70002 : メイドインアビス (検索用:made,in,abyss,メイアビ,めいど)",
+              "70003 : メイドインアビス 深き魂の黎明",
+              "70004 : メイドインアビス 烈日の黄金郷",
+              "70005 : 魔法使いの嫁 (検索用: まほよめ,yome,mahoutukai)",
+              "70006 : 魔法使いの嫁 SEASON2",
+              "70007 : 六花の勇者 (検索用: rokka,ろっか)",
+              "70008 : 後宮の烏 (検索用: こうきゅう,からす,koukyuu,karasu)",
+              "70009 : 魔女の旅々 (検索用: majo,tabitabi)",
+              "70010 : 平家物語 (検索用:heike,へいけ)",
+              "70011 : うたわれるもの (検索用:utaware)",
+              "70012 : うたわれるもの 偽りの仮面",
+              "70013 : うたわれるもの 二人の白皇",
+              "70014 : クジラの子らは砂上に歌う (検索用: くじら,kujira,kuzira)",
+              "70015 : 空挺ドラゴンズ (検索用: くうてい,kuutei,dragons)",
+              "70016 : シャドーハウス (検索用: しゃどー,shadow,house)",
+              "70017 : シャドーハウス -2nd Season-",
+              "70018 : マギ (検索用: magi,アラジン,アリババ,まぎ)",
+              "70019 : シンドバッドの冒険 (検索用: sinbad,しんどばっど)",
+              "70020 : ワンダーエッグ・プライオリティ (検索用: ワンエグ,wonder,egg,priority)",
+              "70021 : 宝石の国 (検索用: houseki,kuni)",
+              "70022 : 約束のネバーランド (検索用: 約ネバ,yakuneba,やくねば)",
+              "70023 : Dr.STONE (検索用: どくたー,すとーん)",
+              "70024 : Dr.STONE Stone Wars",
+              "70025 : Dr.STONE 龍水",
+              "70026 : Dr.STONE NEW WORLD",
+              "70024 : アルスラーン戦記 (検索用: arslan,senki,あるすらーん)",
+              "70025 : アルスラーン戦記 風塵乱舞",
+              "70026 : 人類は衰退しました (検索用:じんるい,jinrui,suitai,岸誠二)",
+              "70027 : リトルウィッチアカデミア (検索用:リトアカ,little,witch,academia)",
+              "70028 : 神様のいない日曜日 (検索用: 神ない,神日,kamisama,nitiyoubi)",
+              "70029 : 甘城ブリリアントパーク (検索用:甘ブリ,amagi,京アニ)",
+              "70030 : 境界線上のホライゾン (検索用: 境ホラ,kyoukaisenjou)",
+              "70031 : 境界線上のホライゾンII",
+              "70032 : キノの旅 -the Beautiful World- (検索用:kino,tabi)",
+              "70033 : キノの旅 何かをするために -life goes on-",
+              "70034 : キノの旅 病気の国 -For You-",
+              "70035 : キノの旅 -the Beautiful World- the Animated Series",
+              "70036 : 魔王城でおやすみ (検索用:maoujou,まおうじょう)",
+              "70037 : ",
+              "",
+              "",
+              "",
+              "",
               "",
               "",
               "",
