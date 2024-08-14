@@ -273,7 +273,12 @@
         {id: 20113, label: 'citrus', shape:'image', image:"image/anime/20113.png", group:1, click:"http://citrus-anime.com/"},
         {id: 20114, label: '桜Trick', shape:'image', image:"image/anime/20114.png", group:1, click:"https://www.tbs.co.jp/anime/sakura/"},
         {id: 20115, label: '終末のイゼッタ', shape:'image', image:"image/anime/20115.png", group:1, click:"https://sh-anime.shochiku.co.jp/izetta/"},
-
+        {id: 20116, label: 'トリニティセブン', shape:'image', image:"image/anime/20116.png", group:1, click:"https://trinity-7.com/"},
+        {id: 20117, label: 'トリニティセブン映画1', shape:'image', image:"image/anime/20117.png", group:1, click:"https://avex-pictures.co.jp/lineup/76681/"},
+        {id: 20118, label: 'トリニティセブン映画2', shape:'image', image:"image/anime/20118.png", group:1, click:"https://movie.trinity-7.com/"},
+        {id: 20119, label: '妹さえ', shape:'image', image:"image/anime/20119.jpg", group:1, click:"https://imotosae.com/"},
+        {id: 20120, label: 'ロシデレ', shape:'image', image:"image/anime/20120.jpeg", group:1, click:"https://roshidere.com/"},
+        {id: 20121, label: 'マケイン', shape:'image', image:"image/anime/20121.png", group:1, click:"https://makeine-anime.com/"},
 
 
         //アクション作品
@@ -371,7 +376,9 @@
         {id: 30091, label: '岸辺露伴は動かない', shape:'image', image:"image/anime/30091.jpg", group:1, click:"https://jojo-portal.com/anime/rohan/"},
         {id: 30092, label: 'ジョジョの奇妙な冒険 GW', shape:'image', image:"image/anime/30092.jpg", group:1, click:"https://jojo-portal.com/anime/gw/"},
         {id: 30093, label: 'ジョジョの奇妙な冒険 SO', shape:'image', image:"image/anime/30093.webp", group:1, click:"https://jojo-portal.com/anime/so/"},
-        
+        {id: 30094, label: 'ブラブレ', shape:'image', image:"image/anime/30094.png", group:1, click:"https://www.black-bullet.net/"},
+        {id: 30095, label: 'シャンフロ', shape:'image', image:"image/anime/30095.webp", group:1, click:"https://anime.shangrilafrontier.com/story/"},
+        {id: 30096, label: 'シャンフロ2', shape:'image', image:"image/anime/30096.jpg", group:1, click:"https://anime.shangrilafrontier.com/"},
 
 
         //日常作品
@@ -515,6 +522,7 @@
         {id: 50071, label: '不徳のギルド', shape:'image', image:"image/anime/50071.jpg", group:1, click:"https://futoku-no-anime.com/"},
         {id: 50072, label: 'まおゆう魔王勇者', shape:'image', image:"image/anime/50072.png", group:1, click:"https://maoyu.jp/"},
         {id: 50073, label: 'ゴブスレ', shape:'image', image:"image/anime/50073.png", group:1, click:"https://goblinslayer.jp/1st/"},
+        {id: 50074, label: '治癒魔法', shape:'image', image:"image/anime/50074.png", group:1, click:"https://chiyumahou-anime.com/"},
 
 
 
@@ -893,6 +901,19 @@
         {from: 24, to: 20115, arrows: 'to'},
         {from: 38, to: 20115, arrows: 'to'},
 
+        {from: 22, to: 20116, arrows: 'to'},
+        {from: 20116, to: 20117, arrows: 'to'},
+        {from: 20117, to: 20118, arrows: 'to'},
+
+        {from: 20, to: 20119, arrows: 'to'},
+        {from: 23, to: 20119, arrows: 'to'},
+
+        {from: 8, to: 20120, arrows: 'to'},
+        {from: 20, to: 20120, arrows: 'to'},
+
+        {from: 8, to: 20121, arrows: 'to'},
+        {from: 20, to: 20121, arrows: 'to'},
+
         {from: 32, to: 30000, arrows: 'to'},
         {from: 30000, to: 30001, arrows: 'to'},
         {from: 30001, to: 30002, arrows: 'to'},
@@ -1034,6 +1055,13 @@
         {from: 30090, to: 30091, arrows: 'to'},
         {from: 30091, to: 30092, arrows: 'to'},
         {from: 30092, to: 30093, arrows: 'to'},
+
+        {from: 31, to: 30094, arrows: 'to'},
+        {from: 32, to: 30094, arrows: 'to'},
+
+        {from: 32, to: 30095, arrows: 'to'},
+        {from: 33, to: 30095, arrows: 'to'},
+        {from: 30095, to: 30096, arrows: 'to'},
 
         {from: 40, to: 40000, arrows: 'to'},
         {from: 90, to: 40000, arrows: 'to'},
@@ -1246,6 +1274,9 @@
         {from: 54, to: 50071, arrows: 'to'},
 
         {from: 54, to: 50073, arrows: 'to'},
+
+        {from: 51, to: 50074, arrows: 'to'},
+        {from: 53, to: 50074, arrows: 'to'},
 
 
         {from: 60, to: 60000, arrows: 'to'},
@@ -1483,6 +1514,12 @@
               "20113 : citrus (検索用:しとらす)",
               "20114 : 桜Trick (検索用:さくら,sakura)",
               "20115 : 終末のイゼッタ (検索用:しゅうまつ,syumatsu,syuumatsu,syuumatu)",
+              "20116 : トリニティセブン (検索用: trinity,seven)",
+              "20117 : トリニティセブン 悠久図書館と錬金術少女",
+              "20118 : トリニティセブン 天空図書館と真紅の魔王",
+              "20119 : 妹さえいればいい (検索用:いもさえ,imouto,妹さえ,imosae)",
+              "20120 : ときどきボソッとロシア語でデレる隣のアーリャさん (検索用: ロシデレ,rosidere,tokidoki)",
+              "20121 : 負けヒロインが多すぎる！ (検索用: 負けイン,makein,まけいん)",
               "30000 : Fate/stay night (検索用:ふぇいと)",
               "30001 : Fate/stay night [Unlimited Blade Works]",
               "30002 : Fate/stay night [Heaven's Feel] I.presage flower",
@@ -1577,6 +1614,9 @@
               "30091 : 岸辺露伴は動かない (検索用: kishiberohan,4部,スピンオフ)",
               "30092 : ジョジョの奇妙な冒険 黄金の風 (検索用: 5部)",
               "30093 : ジョジョの奇妙な冒険 ストーンオーシャン (検索用: 6部)",
+              "30094 : ブラック・ブレット (検索用: black,bullet)",
+              "30095 : シャングリラ・フロンティア (検索用: シャンフロ,syanhuro,syanfuro,しゃんぐりら)",
+              "30096 : シャングリラ・フロンティア 2nd Season",
               "40000 : けいおん! (検索用: k-on!)",
               "40001 : けいおん!!",
               "40002 : 劇場版けいおん!",
@@ -1712,6 +1752,7 @@
               "50071 : 不徳のギルド (検索用:hutoku,guild,ふとく)",
               "50072 : まおゆう魔王勇者 (検索用: maoyuu)",
               "50073 : ゴブリンスレイヤー (検索用: ゴブスレ,goburin)",
+              "50074 : 治癒魔法の間違った使い方 (検索用: ちゆまほう,tiyumahou)",
               "60000 : AIR (検索用: えあー,鳥の詩,国歌)",
               "60001 : あの日見た花の名前を僕達はまだ知らない。 (検索用: あの花)",
               "60002 : ヴァイオレットエヴァーガーデン (検索用: 京アニ)",
@@ -1804,7 +1845,33 @@
               "70047 : 境界の彼方 (検索用:kyoukai,kanata,きょうかい,)",
               "70048 : 境界の彼方 -I'LL BE HERE- 過去篇",
               "70049 : 境界の彼方 -I'LL BE HERE- 未来篇",
-              "",
+              "70050 : 青の祓魔師 (検索用: aoeku,ekusosisuto,あおの,えくそしすと)",
+              "70051 : 青の祓魔師 劇場版",
+              "70052 : 青の祓魔師 京都不浄王篇",
+              "70053 : 青の祓魔師 島根啓明結社篇",
+              "70054 : 青の祓魔師 雪ノ果篇",
+              "70055 : 青の祓魔師 終夜篇",
+              "70056 : 逃げ上手の若君 (検索用: にげわか,逃げ若,nigewaka)",
+              "70057 : 葬送のフリーレン (検索用: そうそう,sousou)",
+              "70058 : ひそねとまそたん (検索用: ひそまそ,hisomaso)",
+              "70059 : 終わりのセラフ (検索用:おわせら,owarino,serahu,終わセラ)",
+              "70060 : 終わりのセラフ 第2クール",
+              "70061 : FAIRY TAIL 第1期 (検索用:フェアリーテイル,ふぇありーている)",
+              "70062 : FAIRY TAIL 第2期",
+              "70063 : FAIRY TAIL 第3期",
+              "70064 : FAIRY TAIL 100年クエスト",
+              "70065 : ダンジョン飯 (検索用:dungeon,だんじょん)",
+              "70066 : ロクでなし魔術講師と禁忌教典 (検索用: ロクアカ,rokudenasi,ろくでなし)",
+              "70067 : ノラガミ (検索用:noragami,のらがみ)",
+              "70068 : ノラガミ ARAGOTO",
+              "70069 : ねじ巻き精霊戦記 天鏡のアルデラミン (検索用: あるでらみん,aruderamin)",
+              "70070 : ランス・アンド・マスクス (検索用: lance,masks)",
+              "70071 : 双星の陰陽師 (検索用: そうせい,sousei,おんみょうじ)",
+              "70072 : 魔法科高校の劣等生 (検索用: mahouka,お兄様,さすおに,rettousei)",
+              "70073 : 魔法科高校の劣等生 来訪者編",
+              "70074 : 魔法科高校の劣等生 追憶編",
+              "70075 : 劇場版 魔法科高校の劣等生 星を呼ぶ少女",
+              "70076 : 魔法科高校の劣等生 第3シーズン",
               "",
               "",
               "",
