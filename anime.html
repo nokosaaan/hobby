@@ -71,6 +71,10 @@
           <p>62 : グロ</p>
           <p>70 : 歴史</p>
           <p>71 : ダーク</p>
+          <p>72 : 魔法,魔術</p>
+          <p>73 : 中華</p>
+          <p>74 : 超能力</p>
+          <p>75 : 妖</p>
           <p>90 : 部活</p>
           <p>91 : 学園系</p>
           <p>92 : お仕事系</p>
@@ -134,7 +138,7 @@
         {id: 38, label: '戦争'},
         {id: 39, label: 'スパイ'},
         {id: 40, label: 'きらら'},
-        {id: 41, label: '旅行'},
+        {id: 41, label: '旅'},
         {id: 42, label: 'ジェネリックきらら'},
         {id: 50, label: '転生'},
         {id: 51, label: '転移'},
@@ -146,6 +150,10 @@
         {id: 62, label: 'グロ'},
         {id: 70, label: '歴史'},
         {id: 71, label: 'ダーク'},
+        {id: 72, label: '魔法,魔術'},
+        {id: 73, label: '中華'},
+        {id: 74, label: '超能力'},
+        {id: 75, label: '妖'},
         {id: 90, label: '部活'},
         {id: 91, label: '学園系'},
         {id: 92, label: 'お仕事系'},
@@ -677,6 +685,10 @@
         {id: 100013, label: '西尾維新', shape:'circle', group:3, value:2, click:"https://ja.wikipedia.org/wiki/%E8%A5%BF%E5%B0%BE%E7%B6%AD%E6%96%B0"},
         {id: 100014, label: 'mad', shape:'circle', group:2, value:2, click:"https://www.youtube.com/watch?v=9Lv0FmRKWZg"},
         {id: 100015, label: 'mad', shape:'circle', group:2, value:2, click:"https://www.youtube.com/watch?v=XQ097V4N-30"},
+        {id: 100016, label: 'mad', shape:'circle', group:2, value:2, click:"https://www.nicovideo.jp/watch/sm38018408"},
+        {id: 100017, label: 'CM', shape:'circle', group:2, value:2, click:"https://www.youtube.com/watch?v=lBEi2eEWJuY"},
+        {id: 100018, label: 'インド人', shape:'circle', group:2, value:2, click:"https://www.nicovideo.jp/watch/sm18393920"},
+        {id: 100019, label: 'nano.RIPE', shape:'circle', group:3, value:2, click:"http://nanoripe.com/"},
         //{id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
         //{id: , label: '', shape:'circle', group:, value:, click:""},
       ]);
@@ -773,11 +785,19 @@
 
         {from: 7, to: 70, arrows: 'to'},
         {from: 7, to: 71, arrows: 'to'},
+        {from: 7, to: 72, arrows: 'to'},
+        {from: 7, to: 73, arrows: 'to'},
+        {from: 7, to: 74, arrows: 'to'},
+        {from: 7, to: 75, arrows: 'to'},
         {from: 7, to: 40045, arrows: 'to'},
         {from: 7, to: 40053, arrows: 'to'},
         {from: 7, to: 50072, arrows: 'to'},
         {from: 54, to: 50072, arrows: 'to'},
         {from: 7, to: 60036, arrows: 'to'},
+        {from: 7, to: 70017, arrows: 'to'},
+        {from: 7, to: 70033, arrows: 'to'},
+        {from: 7, to: 70064, arrows: 'to'},
+        {from: 7, to: 70076, arrows: 'to'},
         
         {from: 8, to: 20048, arrows: 'to'},
         {from: 8, to: 20049, arrows: 'to'},
@@ -1182,6 +1202,7 @@
         {from: 41, to: 40021, arrows: 'to'},
 
         {from: 42, to: 40022, arrows: 'to'},
+        {from: 40022, to: 100019, arrows: 'to'},
         {from: 40022, to: 40023, arrows: 'to'},
         {from: 40023, to: 40024, arrows: 'to'},
         {from: 40024, to: 40025, arrows: 'to'},
@@ -1409,7 +1430,139 @@
         {from: 38, to: 60033, arrows: 'to'},
         {from: 61, to: 60033, arrows: 'to'},
       
+        {from: 7, to: 70000, arrows: 'to'},
+        {from: 41, to: 70000, arrows: 'to'},
+        {from: 70000, to: 70001, arrows: 'to'},
 
+        {from: 71, to: 70002, arrows: 'to'},
+        {from: 70002, to: 70003, arrows: 'to'},
+        {from: 70003, to: 70004, arrows: 'to'},
+  
+        {from: 72, to: 70005, arrows: 'to'},
+        {from: 70005, to: 100017, arrows: 'to'},
+        {from: 70005, to: 70006, arrows: 'to'},
+        {from: 70006, to: 70007, arrows: 'to'},
+        {from: 70007, to: 70008, arrows: 'to'},
+
+        {from: 72, to: 70009, arrows: 'to'},
+      
+        {from: 73, to: 70010, arrows: 'to'},
+        
+        {from: 41, to: 70011, arrows: 'to'},
+        {from: 72, to: 70011, arrows: 'to'},
+
+        {from: 70, to: 70012, arrows: 'to'},
+
+        {from: 72, to: 70013, arrows: 'to'},
+        {from: 70013, to: 70014, arrows: 'to'},
+        {from: 70014, to: 70015, arrows: 'to'},
+
+        {from: 74, to: 70016, arrows: 'to'},
+
+        {from: 71, to: 70018, arrows: 'to'},
+        {from: 70018, to: 70019, arrows: 'to'},
+
+        {from: 72, to: 70020, arrows: 'to'},
+        {from: 70020, to: 70021, arrows: 'to'},
+
+        {from: 74, to: 70022, arrows: 'to'},
+
+        {from: 71, to: 70023, arrows: 'to'},
+
+        {from: 71, to: 70024, arrows: 'to'},
+
+        {from: 70, to: 70025, arrows: 'to'},
+        {from: 70025, to: 70026, arrows: 'to'},
+        {from: 70026, to: 70027, arrows: 'to'},
+        {from: 70027, to: 70028, arrows: 'to'},
+
+        {from: 7, to: 70029, arrows: 'to'},
+        {from: 38, to: 70029, arrows: 'to'},
+        {from: 70029, to: 70030, arrows: 'to'},
+
+        {from: 7, to: 70031, arrows: 'to'},
+        {from: 36, to: 70031, arrows: 'to'},
+        {from: 70031, to: 100018, arrows: 'to'},
+        {from: 70031, to: 100019, arrows: 'to'},
+
+        {from: 72, to: 70032, arrows: 'to'},
+
+        {from: 7, to: 70034, arrows: 'to'},
+        {from: 92, to: 70034, arrows: 'to'},
+
+        {from: 72, to: 70035, arrows: 'to'},
+        {from: 70035, to: 70036, arrows: 'to'},
+
+        {from: 7, to: 70037, arrows: 'to'},
+        {from: 41, to: 70037, arrows: 'to'},
+        {from: 70037, to: 70038, arrows: 'to'},
+        {from: 70038, to: 70039, arrows: 'to'},
+        {from: 70039, to: 70040, arrows: 'to'},
+
+        {from: 7, to: 70041, arrows: 'to'},
+        {from: 8, to: 70041, arrows: 'to'},
+        {from: 70041, to: 100016, arrows: 'to'},
+
+        {from: 32, to: 70042, arrows: 'to'},
+        {from: 72, to: 70042, arrows: 'to'},
+        {from: 70042, to: 70043, arrows: 'to'},
+
+        {from: 72, to: 70044, arrows: 'to'},
+        {from: 70044, to: 70045, arrows: 'to'},
+        {from: 70045, to: 70046, arrows: 'to'},
+        {from: 70046, to: 70047, arrows: 'to'},
+
+        {from: 74, to: 70048, arrows: 'to'},
+
+        {from: 75, to: 70049, arrows: 'to'},
+        {from: 70049, to: 70050, arrows: 'to'},
+
+        {from: 72, to: 70051, arrows: 'to'},
+        {from: 70051, to: 70052, arrows: 'to'},
+
+        {from: 71, to: 70053, arrows: 'to'},
+        {from: 70053, to: 70054, arrows: 'to'},
+        {from: 70054, to: 70055, arrows: 'to'},
+
+        {from: 71, to: 70056, arrows: 'to'},
+        {from: 70056, to: 70057, arrows: 'to'},
+        {from: 70057, to: 70058, arrows: 'to'},
+        {from: 70058, to: 70059, arrows: 'to'},
+        {from: 70059, to: 70060, arrows: 'to'},
+        {from: 70060, to: 70061, arrows: 'to'},
+        
+        {from: 70, to: 70062, arrows: 'to'},
+
+        {from: 72, to: 70063, arrows: 'to'},
+
+        {from: 71, to: 70065, arrows: 'to'},
+        {from: 70065, to: 70066, arrows: 'to'},
+
+        {from: 72, to: 70067, arrows: 'to'},
+        {from: 70067, to: 70068, arrows: 'to'},
+        {from: 70068, to: 70069, arrows: 'to'},
+        {from: 70069, to: 70070, arrows: 'to'},
+
+        {from: 72, to: 70071, arrows: 'to'},
+
+        {from: 72, to: 70072, arrows: 'to'},
+
+        {from: 75, to: 70073, arrows: 'to'},
+        {from: 70073, to: 70074, arrows: 'to'},
+
+        {from: 38, to: 70075, arrows: 'to'},
+        {from: 72, to: 70075, arrows: 'to'},
+
+        {from: 75, to: 70077, arrows: 'to'},
+
+        {from: 30, to: 70078, arrows: 'to'},
+        {from: 72, to: 70078, arrows: 'to'},
+        {from: 91, to: 70078, arrows: 'to'},  
+        {from: 70078, to: 70079, arrows: 'to'},
+        {from: 70079, to: 70080, arrows: 'to'},      
+        {from: 70080, to: 70081, arrows: 'to'},
+        {from: 70081, to: 70082, arrows: 'to'},
+        
 
         {from: 100000, to: 20025, arrows: 'to'},
 
@@ -1469,7 +1622,7 @@
               "38 : 戦争",
               "39 : スパイ",
               "40 : きらら",
-              "41 : 旅行",
+              "41 : 旅",
               "42 : ジェネリックきらら",
               "50 : 転生",
               "51 : 転移",
@@ -1480,7 +1633,11 @@
               "61 : 鬱",
               "62 : グロ",
               "70 : 歴史",
-              "70 : ダーク",
+              "71 : ダーク",
+              "72 : 魔法,魔術",
+              "73 : 中華",
+              "74 : 超能力",
+              "75 : 妖",
               "90 : 部活",
               "91 : 学園系",
               "92 : お仕事系",
@@ -1981,6 +2138,11 @@
               "100012 : シリゴミ卓 エデンの園 (検索用: sirigomi,eden,trpg)",
               "100013 : 西尾維新 (検索用,nishioishin,nisioisin,にしおいしん)",
               "100014 : うちは一族はおしまい! (検索用:おにまいmad)",
+              "100015 : ブレンド・S mad集 (検索用:brend)",
+              "100016 : おやすみカーニバル!! (検索用:oyasumi)",
+              "100017 : 魔法使いの嫁 面白シーン (検索用:cmのやつ)",
+              "100018 : インド人は繁栄しました (検索用:いんど,はんえい)",
+              "100019 : nano.RIPE (検索用: なの)",
             ],
             cache: true,
           },
