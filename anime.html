@@ -177,8 +177,7 @@
         {id: 103, label: '歌劇,演劇'},
         {id: 104, label: 'ループ系'},
         {id: 105, label: '古典芸能'},
-
-
+    
 
         //恋愛作品
         {id: 20000, label: 'とらドラ！', shape: 'image', image:"image/anime/20000.jpg", group:1, click:"https://www.tv-tokyo.co.jp/anime/toradora/"},
@@ -856,6 +855,8 @@
         //{id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
         //{id: , label: '', shape:'circle', group:, value:, click:""},
       ]);
+    </script>
+    <script type="text/javascript" async>
       var edges = new vis.DataSet([
         {from: 1, to: 2, arrows: 'to'},
         {from: 1, to: 3, arrows: 'to'},
@@ -1000,6 +1001,7 @@
         {from: 10, to: 102, arrows: 'to'},
         {from: 10, to: 103, arrows: 'to'},
         {from: 10, to: 104, arrows: 'to'},
+        {from: 10, to: 105, arrows: 'to'},
 
         {from: 20, to: 20005, arrows: 'to'},
 
@@ -2782,6 +2784,10 @@
 
     <h2>News</h2>
         <div class="news" :class="{'scroll-hidden':!scrollNow}">
+          <div class="topic">
+            <div class="time">2024/09/21</div>
+            <div>青春(9)まで追加</div>
+          </div>
           <div class="topic">
             <div class="time">2024/08/17</div>
             <div>ギャグ(8)まで追加</div>
