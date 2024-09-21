@@ -16,7 +16,7 @@
     <input type="button" value="検索" id="box" onclick=Button()>
     <span class="batsu" onclick=reset()></span>    
     <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
-    <details>
+    <details loading="lazy">
       <summary>説明</summary>
       <ul>
         <li>使い方</li>
@@ -469,7 +469,7 @@
         {id: 40058, label: 'となりの吸血鬼さん', shape:'image', image:"image/anime/40058.png", group:1, click:"http://kyuketsukisan-anime.com/"},
         {id: 40059, label: 'こみっくがーるず', shape:'image', image:"image/anime/40059.png", group:1, click:"http://www.comic-girls.com/"},
         {id: 40060, label: 'あんハピ♪', shape:'image', image:"image/anime/40060.jpg", group:1, click:"https://anne-happy.com/"},
-        {id: 40061, label: 'けもフレ', shape:'image', image:"image/anime/40061.jpg", group:1, click:"https://kemono-friends.jp/"},
+        {id: 40061, label: 'けもフレ', shape:'image', image:"image/anime/40061.png", group:1, click:"https://kemono-friends.jp/"},
 
 
 
@@ -806,7 +806,7 @@
         {id: 90057, label: 'ロウきゅーぶ!SS', shape:'image', image:"image/anime/90057.jpg", group:1, click:"http://www.ro-kyu-bu.com/"},
         {id: 90058, label: '天使の3P!', shape:'image', image:"image/anime/90058.png", group:1, click:"https://tenshi-no-3p.com/"},
         {id: 90059, label: 'シャインポスト', shape:'image', image:"image/anime/90059.png", group:1, click:"https://shinepost.jp/"},
-        {id: 90060, label: '推し武', shape:'image', image:"image/anime/90060,jpg", group:1, click:"https://oshibudo.com/"},
+        {id: 90060, label: '推し武', shape:'image', image:"image/anime/90060.jpg", group:1, click:"https://oshibudo.com/"},
         {id: 90061, label: '少女革命ウテナ', shape:'image', image:"image/anime/90061.png", group:1, click:"https://king-cr.jp/special/utena/"},
         {id: 90062, label: 'ガルクラ', shape:'image', image:"image/anime/90062.png", group:1, click:"https://girls-band-cry.com/"},
         {id: 90063, label: 'ろこどる', shape:'image', image:"image/anime/90063.png", group:1, click:"https://www.tbs.co.jp/anime/locodol/"},
@@ -2710,7 +2710,7 @@
           }
       });
     </script>
-    <script type="text/javascript">
+    <script type="text/javascript" async>
 
       //検索ボタンを押したときにselect_node関数を実行
       function Button(){
@@ -2787,7 +2787,7 @@
 
     </script>
 
-    <h2>News</h2>
+    <h2 loading="lazy">News</h2>
         <div class="news" :class="{'scroll-hidden':!scrollNow}">
           <div class="topic">
             <div class="time">2024/09/21</div>
@@ -2826,16 +2826,5 @@
               <div>仮リリース</div>
           </div>
         </div>
-
-    <script>
-      /*
-      const paragraph = document.querySelector("h2");
-      sel_con.addEventListener('click',updateh2);
-      function updateh2(){
-        const code = document.getElementById("autoComplete");
-        paragraph.textContent=code.value+'が選ばれました.';
-      }
-      */
-    </script>
   </body>
 </html>
