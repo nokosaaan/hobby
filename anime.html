@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <input type="text" id="autoComplete" class="search" enterkeyhint="enter" >
+    <input type="text" id="autoComplete" class="search" enterkeyhint="enter" loading="lazy">
     <!--onChange=select_node(this.value)はスマホで不具合起こるのでお蔵入りしました.-->
-    <input type="button" value="検索" id="box" onclick=Button()>
-    <span class="batsu" onclick=reset()></span>    
-    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+    <input type="button" value="検索" id="box" onclick=Button() loading="lazy">
+    <span class="batsu" onclick=reset() loading="lazy"></span>    
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js" defer></script>
     <details loading="lazy">
       <summary>説明</summary>
       <ul>
@@ -1967,7 +1967,7 @@
         
       ]);
       </script>
-      <script type="text/javascript">
+      <script type="text/javascript" defer>
       var container = document.getElementById('network');
       var sel_con= document.getElementById('box');
       var data = {
