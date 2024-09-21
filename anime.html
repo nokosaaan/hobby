@@ -20,7 +20,7 @@
       <summary>説明</summary>
       <ul>
         <li>使い方</li>
-          <p id="caution">ロードに30～50秒ほど時間がかかります。ご了承ください。</p>
+          <p id="caution">ロードに1分ほど時間がかかります。ご了承ください。</p>
           <p>上部の検索バーにキーワードを入力してください。検索候補に番号とワードが引っ掛かるはずなので</p>
           <p>PCなら十字キーorクリックで選択,スマホならタップで選択してください。PC、スマホともにEnter、検索ボタン両方okです。</p>
           <p>ノードを数字で管理している都合上、キーワードをそのまま検索にかけても反応しないので注意してください。</p>
@@ -1967,7 +1967,7 @@
         
       ]);
       </script>
-      <script type="text/javascript" defer>
+      <script type="text/javascript">
       var container = document.getElementById('network');
       var sel_con= document.getElementById('box');
       var data = {
@@ -2709,7 +2709,9 @@
             }
           }
       });
-            
+    </script>
+    <script type="text/javascript">
+
       //検索ボタンを押したときにselect_node関数を実行
       function Button(){
         var code = document.getElementById('autoComplete').value;
