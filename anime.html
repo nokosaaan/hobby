@@ -179,7 +179,6 @@
 
 
       /*
-        
         {id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
         {id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
         {id: , label: '', shape:'image', image:"image/anime/", group:1, click:""},
@@ -387,6 +386,9 @@
       if (params.nodes.length == 1) {
         var node = nodes.get(selectedNodeId);
         if (selectedNodeId >= 20000) {
+          open(node.click, "_blank");
+        }
+        else if(selectedNodeId>=2 && selectedNodeId<=10){
           open(node.click, "_blank");
         }
       }
