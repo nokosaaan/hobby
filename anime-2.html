@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <title>AnimeRoadMap</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="anime_style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.3/dist/css/autoComplete.min.css">
+</head>
+
+<body>
+    <input type="text" id="autoComplete" class="search" enterkeyhint="enter" >
+    
+    <input type="button" value="検索" id="box" onclick=Button() loading="lazy">
+    <span class="batsu" onclick=reset() loading="lazy"></span>    
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@10.2.7/dist/autoComplete.min.js"></script>
+    <details loading="lazy">
+      <summary>説明</summary>
+      <ul>
+        <li>使い方</li>
+          <p id="caution">ロードに1分ほど時間がかかります。ご了承ください。</p>
+          <p>上部の検索バーにキーワードを入力してください。検索候補に番号とワードが引っ掛かるはずなので</p>
+          <p>PCなら十字キーorクリックで選択,スマホならタップで選択してください。PC、スマホともにEnter、検索ボタン両方okです。</p>
+          <p>ノードを数字で管理している都合上、キーワードをそのまま検索にかけても反応しないので注意してください。</p>
+          <p>実行すると、目的のノードに移動します。このとき、目的のノードは画面中央で注目状態となっていますが、ネットワークがズームアウト状態(全体が見えている状態)だと見えにくいため、予め拡大しておくことをお勧めします。(PCは領域内でホイールでスクロール、スマホは2本指で拡大)</p>
+          <p>ノードとノードを繋ぐ矢印があると思いますが、直接繋がっているノード程関連度が高くなっています。</p>
+          <p>画像をクリックorタップすると公式サイトに飛びます。</p>
+          <p>キーワードを変更したいときは、検索バーの×ボタンを押すとリセットされます(有効範囲が狭いので頑張ってエイム合わせてください)</p>
+          <p><s>2024年6月頃(～2024/08/05まで)、海外ハッカーグループの大規模サイバー攻撃によりKADOKAWAドメインのサイトが一部利用できない状態です。</s></p>
+          <p id="caution">追記:2024/08/05よりニコニコがサービスを再開しましたが、KADOKAWAドメインのサイトの復活は<span id="real-time"></span>現在も確認できない状態です。</p>
+        <li>一覧</li>
+        <details>
+          <summary>展開する</summary>
+          <p>1 :ジャンル</p>
+          <p>2 : 恋愛</p>
+          <p>3 : アクション</p>
+          <p>4 : 日常</p>
+          <p>5 : 異世界</p>
+          <p>6 : 泣き</p>
+          <p>7 : ファンタジー</p>
+          <p>8 : ギャグ</p>
+          <p>9 : 青春</p>
+          <p>10 : その他</p>
+          <p>20 : ラブコメ</p>
+          <p>21 : 家族愛</p>
+          <p>22 : ハーレム</p>
+          <p>23 : 妹</p>
+          <p>24 : 百合</p>
+          <p>30 : 無双</p>
+          <p>31 : 銃</p>
+          <p>32 : バトル</p>
+          <p>33 : 剣</p>
+          <p>34 : ロボット</p>
+          <p>35 : 魔法少女</p>
+          <p>36 : SF</p>
+          <p>37 : ゾンビ</p>
+          <p>38 : 戦争</p>
+          <p>39 : スパイ</p>
+          <p>40 : きらら</p>
+          <p>41 : 旅行</p>
+          <p>42 : ジェネリックきらら</p>
+          <p>50 : 転生</p>
+          <p>51 : 転移</p>
+          <p>52 : 未分類</p>
+          <p>53 : 勇者召喚</p>
+          <p>54 : 現地</p>
+          <p>60 : Key作品</p>
+          <p>61 : 鬱</p>
+          <p>62 : グロ</p>
+          <p>70 : 歴史</p>
+          <p>71 : ダーク</p>
+          <p>72 : 魔法,魔術</p>
+          <p>73 : 中華</p>
+          <p>74 : 超能力</p>
+          <p>75 : 妖</p>
+          <p>90 : 部活</p>
+          <p>91 : 学校,学園系</p>
+          <p>92 : お仕事系</p>
+          <p>93 : アイドル</p>
+          <p>94 : 農業</p>
+          <p>95 : バンド</p>
+          <p>96 : スポーツ</p>
+          <p>97 : 音楽</p>
+          <p>98 : サバイバル</p>
+          <p>100 : ミステリー</p>
+          <p>101 : TS</p>
+          <p>102 : 擬人化</p>
+          <p>103 : 歌劇,演劇</p>
+          <p>104 : ループ系</p>
+          <p>105 : 古典芸能</p>
+          <p>106 : 子供向け</p>
+          <p>107 : コメディ</p>
+          <p>108 : ホラー</p>
+          <p>200 : 恋愛2</p>
+          <p>20~29は2のジャンルの類似ジャンル、30~39は3の類似ジャンル…というようになっています。</p>
+          <p>各作品は親ジャンル(2~10)を最高位とする5~6桁の数字で表されます。</p>
+          <P>例：30026→鬼滅の刃 (ジャンル:バトル(32),剣(33))</P>
+        </details>
+        <li>おすすめ</li>
+        <p>まずはどんなアニメを見たいかを考えて、親ジャンル検索(2~10を入力)を行い、そこから伸びているノードで気になる作品があれば調べてみるという方法が一番合っていると思います。</p>
+        <li>補足</li>
+        <p>アニメの続編があるのに表示されていないものがありますが、「意図的に追加していないor最新情報を追えていない」の2パターンあります。
+           後者だと思った場合はご連絡ください、追加します。前者の場合は「見なくても問題ないor宗教上存在しないものとして扱っている」なのでご了承ください。</p>
+      </ul>
+    </details>
+    <div id="network"></div>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+
+    <script type="text/javascript" defer>
+      var nodes = new vis.DataSet([
+        {id: 2, label: '恋愛', },
+        {id: 3, label: 'アクション', },
+        //ジャンル要素
+        {id: 20, label: 'ラブコメ'},
+        {id: 21, label: '家族愛'},
+        {id: 22, label: 'ハーレム'},
+        {id: 23, label: '妹'},
+        {id: 24, label: '百合'},
+        {id: 30, label: '無双'},
+        {id: 31, label: '銃'},
+        {id: 32, label: 'バトル'},
+        {id: 60, label: 'Key作品'},
+        {id: 91, label: '学校,学園系'},
+        {id: 94, label: '農業'},
+        {id: 108, label: 'ホラー'},
+        {id: 200, label: 'ラブコメ2'},
+        {id: 220, label: 'ハーレム2'},
+        //恋愛作品
+        {id: 20000, label: 'とらドラ！', shape: 'image', image:"image/anime/20000.jpg", group:1, click:"https://www.tv-tokyo.co.jp/anime/toradora/"},
+        {id: 20001, label: '凪あす', shape: 'image', image:"image/anime/20001.png", group:1, click:"http://www.nagiasu.jp/story/index.html#story-00"},
+        {id: 20002, label: 'true tears', shape: 'image', image:"image/anime/20002.jpg", group:1, click:"http://www.truetears.jp/"},
+        {id: 20003, label: 'ココロコネクト', shape: 'image', image:"image/anime/20003.jpg", group:1, click:"http://www.kokoro-connect.com/"},
+        {id: 20004, label: '月がきれい', shape: 'image', image:"image/anime/20004.png", group:1, click:"https://tsukigakirei.jp/"},
+        {id: 20005, label: 'となりの怪物くん', shape: 'image', image:"image/anime/20005.jpg", group:1, click:"https://www.tk-anime.info/"},
+        {id: 20006, label: 'CLANNAD', shape: 'image', image:"image/anime/20006.jpg", group:1, click:"https://www.tbs.co.jp/clannad/clannad1/"},
+        {id: 20007, label: 'CLANNAD AFTER STORY', shape: 'image', image:"image/anime/20007.jpg", group:1, click:"https://www.tbs.co.jp/clannad/"},
+        {id: 20008, label: 'ゴールデンタイム', shape: 'image', image:"image/anime/20008.jpg", group:1, click:"http://golden-time.jp/"},
+        {id: 20009, label: '化物語', shape: 'image', image:"image/anime/20009.jpg", group:1, click:"https://www.monogatari-series.com/bakemonogatari/"},
+        {id: 20010, label: '傷物語', shape: 'image', image:"image/anime/20010.png", group:1, click:"https://www.kizumonogatari-movie.com/"},
+        {id: 20011, label: '偽物語', shape: 'image', image:"image/anime/20011.jpg", group:1, click:"https://www.monogatari-series.com/series/?code=nisemonogatari"},
+        {id: 20012, label: '猫物語 黒', shape: 'image', image:"image/anime/20012.jpg", group:1, click:"https://www.monogatari-series.com/series/?code=nekomonogatari-kuro"},
+        {id: 20013, label: '物語 セカンドシーズン', shape: 'image', image:"image/anime/20013.png", group:1, click:"https://www.monogatari-series.com/series/?code=monogatari-series"},
+        {id: 20014, label: '憑物語', shape: 'image', image:"image/anime/20014.png", group:1, click:"https://www.monogatari-series.com/series/?code=tsukimonogatari"},
+        {id: 20015, label: '終物語', shape: 'image', image:"image/anime/20015.png", group:1, click:"https://www.monogatari-series.com/series/?code=owarimonogatari"},
+        {id: 20016, label: '暦物語', shape: 'image', image:"image/anime/20016.png", group:1, click:"https://www.monogatari-series.com/series/?code=koyomimonogatari"},
+        {id: 20017, label: '続・終物語', shape: 'image', image:"image/anime/20017.jpg", group:1, click:"https://www.monogatari-series.com/series/?code=zokuowarimonogatari"},
+        {id: 20018, label: '物語 オフ＆モンスターシーズン', shape: 'image', image:"image/anime/20018.jpg", group:1, click:"https://www.monogatari-series.com/oms/"},
+        {id: 20019, label: '中二恋', shape: 'image', image:"image/anime/20019.png", group:1, click:"https://www.anime-chu-2.com/tv/"},
+        {id: 20020, label: '中二恋 戀', shape: 'image', image:"image/anime/20020.png", group:1, click:"https://www.anime-chu-2.com/tv2nd/"},
+        {id: 20021, label: '中二恋 -Take On Me-', shape: 'image', image:"image/anime/20021.jpg", group:1, click:"https://www.anime-chu-2.com/"},
+        {id: 20022, label: '君嘘', shape: 'image', image:"image/anime/20022.jpg", group:1, click:"https://www.kimiuso.jp/"},
+        {id: 20023, label: 'ニセコイ', shape: 'image', image:"image/anime/20023.png", group:1, click:"https://www.nisekoi.jp/1st/"},
+        {id: 20024, label: 'ニセコイ:', shape: 'image', image:"image/anime/20024.jpg", group:1, click:"https://www.nisekoi.jp/"},
+        {id: 20025, label: '俺修羅', shape: 'image', image:"image/anime/20025.webp", group:1, click:"https://www.oreshura.net/"},
+        {id: 20026, label: 'さくら荘', shape: 'image', image:"image/anime/20026.png", group:1, click:"http://sakurasou.tv/"},
+        {id: 20027, label: '変猫', shape: 'image', image:"image/anime/20027.jpg", group:1, click:"http://www.henneko.jp/"},
+        {id: 20028, label: 'かぐや様', shape: 'image', image:"image/anime/20028.jpg", group:1, click:"https://kaguya.love/1st/"},
+        {id: 20029, label: 'かぐや様 ？', shape: 'image', image:"image/anime/20029.jpg", group:1, click:"https://kaguya.love/2nd/"},
+        {id: 20030, label: 'かぐや様 -ウルトラロマンティック-', shape: 'image', image:"image/anime/20030.jpg", group:1, click:"https://kaguya.love/3rd/"},
+        {id: 20031, label: 'かぐや様 -ファーストキッスは終わらない-', shape: 'image', image:"image/anime/20031.jpg", group:1, click:"https://kaguya.love/"},
+        {id: 20032, label: 'からかい上手の高木さん', shape: 'image', image:"image/anime/20032.jpg", group:1, click:"https://takagi3.me/1st/"},
+        {id: 20033, label: 'かのかり', shape: 'image', image:"image/anime/20033.jpg", group:1, click:"https://kanokari-official.com/1st/"},
+        {id: 20034, label: 'かのかり 第2期', shape: 'image', image:"image/anime/20034.jpg", group:1, click:"https://kanokari-official.com/2nd/"},
+        {id: 20035, label: 'かのかり 第3期', shape: 'image', image:"image/anime/20035.jpg", group:1, click:"https://kanokari-official.com/"},
+        {id: 20036, label: '俺ガイル', shape: 'image', image:"image/anime/20036.jpg", group:1, click:"https://www.tbs.co.jp/anime/oregairu/1st/"},
+        {id: 20037, label: '俺ガイル 続', shape: 'image', image:"image/anime/20037.jpg", group:1, click:"https://www.tbs.co.jp/anime/oregairu/2nd/"},
+        {id: 20038, label: '俺ガイル 完', shape: 'image', image:"image/anime/20038.webp", group:1, click:"https://www.tbs.co.jp/anime/oregairu/"},
+        {id: 20039, label: 'ごとよめ', shape: 'image', image:"image/anime/20039.jpg", group:1, click:"https://www.tbs.co.jp/anime/5hanayome/1st/"},
+        {id: 20040, label: '神のみ', shape: 'image', image:"image/anime/20040.png", group:1, click:"https://www.tv-tokyo.co.jp/anime/kaminomi/"},
+        {id: 20041, label: '神のみ II', shape: 'image', image:"image/anime/20041.png", group:1, click:"https://www.tv-tokyo.co.jp/anime/kaminomi2/"},
+        {id: 20042, label: '神のみ 女神篇', shape: 'image', image:"image/anime/20042.png", group:1, click:"https://www.tv-tokyo.co.jp/anime/kaminomi3/index2.html"},
+        {id: 20043, label: '俺妹', shape: 'image', image:"image/anime/20043.png", group:1, click:"https://www.oreimo-anime.com/1st/"},
+        {id: 20044, label: '俺妹 第2期', shape: 'image', image:"image/anime/20044.jpg", group:1, click:"https://www.oreimo-anime.com/"},
+        {id: 20045, label: 'エロマンガ先生', shape: 'image', image:"image/anime/20045.jpg", group:1, click:"https://eromanga-sensei.com/"},
+        {id: 20046, label: 'Just Because!', shape: 'image', image:"image/anime/20046.jpg", group:1, click:"https://justbecause.jp/"},
+        {id: 20047, label: 'ゲーマーズ!', shape: 'image', image:"image/anime/20047.jpg", group:1, click:"https://www.gamers-anime.com/"},
+        {id: 20048, label: '月刊少女野崎くん', shape: 'image', image:"image/anime/20048.png", group:1, click:"https://www.tv-tokyo.co.jp/anime/nozakikun/sp/"},
+        {id: 20049, label: 'WORKING!!', shape: 'image', image:"image/anime/20049.png", group:1, click:"https://www.wagnaria.com/1st/"},
+        {id: 20050, label: 'WORKING’!!', shape: 'image', image:"image/anime/20050.png", group:1, click:"https://www.wagnaria.com/2nd/"},
+        {id: 20051, label: 'WORKING!!!', shape: 'image', image:"image/anime/20051.jpg", group:1, click:"https://www.wagnaria.com/"},
+        {id: 20052, label: '河合荘', shape: 'image', image:"image/anime/20052.jpg", group:1, click:"https://www.tbs.co.jp/anime/kawaisou/"},
+        {id: 20053, label: 'バカテス', shape: 'image', image:"image/anime/20053.jpg", group:1, click:"http://www.bakatest.com/"},
+        {id: 20054, label: 'バカテス にっ!', shape: 'image', image:"image/anime/20054.webp", group:1, click:"http://www.bakatest.com/"},
+        {id: 20055, label: '寄宿学校', shape: 'image', image:"image/anime/20055.png", group:1, click:"https://juliet-anime.com/"},
+        {id: 20056, label: 'はがない', shape: 'image', image:"image/anime/20056.jpg", group:1, click:"https://www.tbs.co.jp/anime/haganai/1st/"},
+        {id: 20057, label: 'はがない NEXT', shape: 'image', image:"image/anime/20057.jpg", group:1, click:"https://www.tbs.co.jp/anime/haganai/"},
+        {id: 20058, label: 'IS', shape: 'image', image:"image/anime/20058.png", group:1, click:"https://www.tbs.co.jp/anime/is/"},
+        {id: 20059, label: 'IS2', shape: 'image', image:"image/anime/20059.jpg", group:1, click:"https://www.tbs.co.jp/anime/is2/"},
+        {id: 20060, label: 'まよチキ！', shape: 'image', image:"image/anime/20060.jpg", group:1, click:"https://www.tbs.co.jp/anime/mayochiki/"},
+        {id: 20061, label: '異能バトル', shape: 'image', image:"image/anime/20061.jpg", group:1, click:"https://inou-anime.com/"},
+        {id: 20062, label: '着せ替え人形', shape: 'image', image:"image/anime/20062.jpg", group:1, click:"https://bisquedoll-anime.com/"},
+        {id: 20063, label: '生徒会の一存', shape: 'image', image:"image/anime/20063.jpg", group:1, click:"https://fantasiabunko.jp/special/200904seitokai/"},
+        {id: 20064, label: 'カンピオーネ！', shape: 'image', image:"image/anime/20064.png", group:1, click:"https://wwws.warnerbros.co.jp/anime/campi-anime/"},
+        {id: 20065, label: 'デート・ア・ライブ', shape: 'image', image:"image/anime/20065.jpeg", group:1, click:"http://date-a-live-anime.com/1st-2nd/"},
+        {id: 20066, label: 'デート・ア・ライブII', shape: 'image', image:"image/anime/20066.jpg", group:1, click:"http://date-a-live-anime.com/1st-2nd/special/"},
+        {id: 20067, label: 'デート・ア・ライブIII', shape: 'image', image:"image/anime/20067.jpg", group:1, click:"http://date-a-live-anime.com/"},
+        {id: 20068, label: 'デート・ア・ライブIV', shape: 'image', image:"image/anime/20068.jpg", group:1, click:"https://date-a-live4th-anime.com/"},
+        {id: 20069, label: 'デート・ア・ライブV', shape: 'image', image:"image/anime/20069.jpg", group:1, click:"https://date-a-live5th-anime.com/"},
+        {id: 20070, label: 'ハイスクールD×D', shape: 'image', image:"image/anime/20070.png", group:1, click:"http://haremking.tv/season1/"},
+        {id: 20071, label: 'ハイスクールD×D NEW', shape: 'image', image:"image/anime/20071.png", group:1, click:"http://haremking.tv/season2/"},
+        {id: 20072, label: 'ハイスクールD×D BorN', shape: 'image', image:"image/anime/20072.jpg", group:1, click:"http://haremking.tv/season3/"},
+        {id: 20073, label: 'ハイスクールD×D HERO', shape: 'image', image:"image/anime/20073.jpg", group:1, click:"http://haremking.tv/"},
+        {id: 20074, label: 'To LOVEる', shape: 'image', image:"image/anime/20074.jpg", group:1, click:"https://www.tbs.co.jp/anime/to-love-ru/"},
+        {id: 20075, label: 'もっと To LOVEる', shape: 'image', image:"image/anime/20075.jpg", group:1, click:"https://www.tbs.co.jp/tbs-ch/item/a0143/"},
+        {id: 20076, label: 'To LOVEる ダークネス', shape: 'image', image:"image/anime/20076.jpg", group:1, click:"https://www.tbs.co.jp/tbs-ch/item/a0146/"},
+        {id: 20077, label: 'To LOVEる ダークネス2nd', shape: 'image', image:"image/anime/20077.png", group:1, click:"https://www.tbs.co.jp/tbs-ch/item/a0236/"},
+        {id: 20078, label: '冴えカノ', shape: 'image', image:"image/anime/20078.jpg", group:1, click:"https://www.saenai.tv/1st/"},
+        {id: 20079, label: '冴えカノ♭', shape: 'image', image:"image/anime/20079.jpg", group:1, click:"https://www.saenai.tv/"},
+        {id: 20080, label: '冴えカノ fine', shape: 'image', image:"image/anime/20080.jpg", group:1, click:"https://saenai-movie.com/" },
+        {id: 20081, label: 'stb', shape: 'image', image:"image/anime/20081.png", group:1, click:"http://www.strike-the-blood.com/" },
+        {id: 20082, label: 'stb_OVA1', shape: 'image', image:"image/anime/20082.png", group:1, click:"http://www.strike-the-blood.com/first/#/homepage" },
+        {id: 20083, label: 'stb_OVA2', shape: 'image', image:"image/anime/20083.png", group:1, click:"http://www.strike-the-blood.com/second/" },
+        {id: 20084, label: 'stb_OVA3', shape: 'image', image:"image/anime/20084.png", group:1, click:"http://www.strike-the-blood.com/third/" },
+        {id: 20085, label: 'stb_OVAspecial', shape: 'image', image:"image/anime/20085.jpg", group:1, click:"http://www.strike-the-blood.com/specialova/" },
+        {id: 20086, label: 'stb_OVA4', shape: 'image', image:"image/anime/20086.png", group:1, click:"http://www.strike-the-blood.com/fourth/" },
+        {id: 20087, label: 'stb_OVA5', shape: 'image', image:"image/anime/20087.jpg", group:1, click:"http://www.strike-the-blood.com/final/" },
+        {id: 20088, label: '変好き', shape: 'image', image:"image/anime/20088.jpg", group:1, click:"https://hensuki.com/" },
+        {id: 20089, label: '六畳間', shape: 'image', image:"image/anime/20089.png", group:1, click:"https://corona106.tv/" },
+        {id: 20090, label: '緋弾のアリア', shape: 'image', image:"image/anime/20090.png", group:1, click:"https://www.tbs.co.jp/anime/aria/" },
+        {id: 20091, label: '緋弾のアリアAA', shape: 'image', image:"image/anime/20091.png", group:1, click:"http://ariaaa.tv/" },
+        {id: 20092, label: '脳コメ', shape: 'image', image:"image/anime/20092.png", group:1, click:"http://noucome.jp/" },
+        {id: 20093, label: 'これゾン', shape: 'image', image:"image/anime/20093.png", group:1, click:"https://fantasiabunko.jp/sp/201006zombie/" },
+        {id: 20094, label: 'これゾン2', shape: 'image', image:"image/anime/20094.jpg", group:1, click:"https://anime.eiga.com/program/102648/" },
+        {id: 20095, label: 'かんなぎ', shape: 'image', image:"image/anime/20095.jpg", group:1, click:"https://www.nagisama-fc.com/anime/" },
+        {id: 20096, label: '政リベ', shape:'image', image:"image/anime/20096.png", group:1, click:"https://masamune-tv.com/1st/"},
+        {id: 20097, label: '政リベR', shape:'image', image:"image/anime/20097.png", group:1, click:"https://masamune-tv.com/"},
+        {id: 20098, label: 'そらのおとしもの', shape:'image', image:"image/anime/20098.png", group:1, click:"https://columbia.jp/soraoto/index.html"},
+        {id: 20099, label: 'そらのおとしものf', shape:'image', image:"image/anime/20099.png", group:1, click:"https://www.bs11.jp/anime/f-1/"},
+        {id: 20100, label: '迷い猫', shape:'image', image:"image/anime/20100.jpg", group:1, click:"https://www.at-x.com/program/detail/8823"},
+        {id: 20101, label: '恋愛暴君', shape:'image', image:"image/anime/20101.jpg", group:1, click:"https://www.tv-tokyo.co.jp/anime/renaiboukun/"},
+        {id: 20102, label: '青ブタ', shape:'image', image:"image/anime/20102.png", group:1, click:"https://ao-buta.com/tv/"},
+        {id: 20103, label: '青ブタ 夢見る', shape:'image', image:"image/anime/20103.jpg", group:1, click:"https://ao-buta.com/yumemiru/"},
+        {id: 20104, label: '青ブタ おでかけ', shape:'image', image:"image/anime/20104.jpg", group:1, click:"https://ao-buta.com/odekake/"},
+        {id: 20105, label: '青ブタ ランドセル', shape:'image', image:"image/anime/20105.jpg", group:1, click:"https://ao-buta.com/knapsack/"},
+        {id: 20106, label: 'ゆるゆり', shape:'image', image:"image/anime/20106.png", group:1, click:"https://yuruyuri.com/1st/"},
+        {id: 20107, label: 'ゆるゆり 2期', shape:'image', image:"image/anime/20107.jpg", group:1, click:"https://yuruyuri.com/2nd/"},
+        {id: 20108, label: 'ゆるゆり なちゅやちゅみ！', shape:'image', image:"image/anime/20108.png", group:1, click:"https://yuruyuri.com/ova/"},
+        {id: 20109, label: 'ゆるゆり なちゅやちゅみ！＋', shape:'image', image:"image/anime/20109.webp", group:1, click:"https://yuruyuri.com/nachup/"},
+        {id: 20110, label: 'ゆるゆり さんハイ！', shape:'image', image:"image/anime/20110.png", group:1, click:"https://yuruyuri.com/3hai/"},
+        {id: 20111, label: '安達としまむら', shape:'image', image:"image/anime/20111.png", group:1, click:"https://www.tbs.co.jp/anime/adashima/"},
+        {id: 20112, label: 'やが君', shape:'image', image:"image/anime/20112.png", group:1, click:"http://yagakimi.com/"},
+        {id: 20113, label: 'citrus', shape:'image', image:"image/anime/20113.png", group:1, click:"http://citrus-anime.com/"},
+        {id: 20114, label: '桜Trick', shape:'image', image:"image/anime/20114.png", group:1, click:"https://www.tbs.co.jp/anime/sakura/"},
+        {id: 20115, label: '終末のイゼッタ', shape:'image', image:"image/anime/20115.png", group:1, click:"https://sh-anime.shochiku.co.jp/izetta/"},
+        {id: 20116, label: 'トリニティセブン', shape:'image', image:"image/anime/20116.png", group:1, click:"https://trinity-7.com/"},
+        {id: 20117, label: 'トリニティセブン映画1', shape:'image', image:"image/anime/20117.png", group:1, click:"https://avex-pictures.co.jp/lineup/76681/"},
+        {id: 20118, label: 'トリニティセブン映画2', shape:'image', image:"image/anime/20118.png", group:1, click:"https://movie.trinity-7.com/"},
+        {id: 20119, label: '妹さえ', shape:'image', image:"image/anime/20119.jpg", group:1, click:"https://imotosae.com/"},
+        {id: 20120, label: 'ロシデレ', shape:'image', image:"image/anime/20120.jpeg", group:1, click:"https://roshidere.com/"},
+        {id: 20121, label: 'マケイン', shape:'image', image:"image/anime/20121.png", group:1, click:"https://makeine-anime.com/"},
+        {id: 20122, label: '恋と嘘', shape:'image', image:"image/anime/20122.jpg", group:1, click:"https://koiuso-anime.com/index.php"},
+        {id: 20123, label: 'あの夏', shape:'image', image:"image/anime/20123.png", group:1, click:"https://www.ichika-ichika.com/"},
+        {id: 20124, label: 'のうりん', shape:'image', image:"image/anime/20124.png", group:1, click:"http://www.no-rin.tv/"},
+        {id: 20125, label: '山女', shape:'image', image:"image/anime/20125.png", group:1, click:"https://www.ytv.co.jp/yamajo-anime/"},
+        {id: 20126, label: '実は私は', shape:'image', image:"image/anime/20126.jpg", group:1, click:"https://jitsuwata.tv/"},
+        {id: 20127, label: 'orange', shape:'image', image:"image/anime/20127.png", group:1, click:"http://orange-anime.com/"},
+        {id: 20128, label: 'わたモテ', shape:'image', image:"image/anime/20128.jpg", group:1, click:"https://www.tbs.co.jp/anime/watamote/"},
+        {id: 20129, label:'りゅうおうのおしごと!',shape:'image',image:"image/anime/20129.png",group:1,click:"https://www.ryuoh-anime.com/"},
+        {id: 20130, label:'ハピシュガ',shape:'image',image:"image/anime/20130.png",group:1,click:"https://archive.genco.co.jp/happysugarlife/"},
+
+        //{id: 100000, label: '空耳op', shape: 'circle', group:2, click:"https://www.youtube.com/watch?v=RKOqojoiqJc"},
+        {id: 100001, label: '元高木さん', shape: 'circle', group:2, click:"https://shogakukan-comic.jp/book-series?cd=46612"},
+        {id: 100002, label: 'op,ed集', shape: 'circle', group:2, click:"https://youtube.com/playlist?list=PLtdSPZNWT1Au2eUd2gFr1g5Asvc-ps8BR&si=TRAmLPXkC7AatWPT"},
+        {id: 100003, label: '大石昌良', shape: 'circle', group:3, value:2, click:"https://www.014014.jp/"},
+        {id: 100004, label: 'ClariS', shape: 'circle', group:3, value:2, click:"https://www.clarismusic.jp/"},
+        {id: 100005, label: 'TrySail', shape: 'circle', group:3, value:2, click:"https://trysail.jp/"},
+        {id: 100006, label: 'このみん', shape: 'circle', group:3, value:2, click:"https://www.konomi-suzuki.net/"},
+        {id: 100007, label: 'fhána', shape: 'circle', group:3, value:2, click:"https://fhana.jp/"},
+        {id: 100008, label: 'op,ed集', shape: 'circle', group:2, click:"https://youtube.com/playlist?list=PLjPFkB2dbgmvJX7IIm435rHc71Mki6m5l&si=SPeCya6T3NDzieWi"},
+        {id: 100009, label: 'コンマイくん', shape: 'circle', group:2, value:2, click:"https://www.nicovideo.jp/watch/sm30233457"},
+        {id: 100013, label: '西尾維新', shape:'circle', group:3, value:2, click:"https://ja.wikipedia.org/wiki/%E8%A5%BF%E5%B0%BE%E7%B6%AD%E6%96%B0"},
+      ]);
+    </script>
+    <script type="text/javascript" defer>var edges=new vis.DataSet([
+      {from:2,to:20,arrows:'to'},
+      {from:2,to:21,arrows:'to'},
+      {from:2,to:22,arrows:'to'},
+      {from:2,to:23,arrows:'to'},
+      {from:2,to:24,arrows:'to'},
+      {from:2,to:200,arrows:'to'},
+      {from:2,to:220,arrows:'to'},
+      {from:2,to:20000,arrows:'to'},
+      {from:2,to:20001,arrows:'to'},
+      {from:2,to:20002,arrows:'to'},
+      {from:2,to:20003,arrows:'to'},
+      {from:2,to:20004,arrows:'to'},
+      {from:2,to:20022,arrows:'to'},
+      {from:2,to:20032,arrows:'to'},
+      {from:2,to:20046,arrows:'to'},
+      {from:2,to:20062,arrows:'to'},
+      {from:2,to:20122,arrows:'to'},
+      {from:2,to:20127,arrows:'to'},
+
+      {from:20000,to:20008,arrows:'to'},
+      {from:20,to:20005,arrows:'to'},
+      {from:21,to:20006,arrows:'to'},
+      {from:20006,to:20007,arrows:'to'},
+      {from:22,to:20009,arrows:'to'},
+      {from:20009,to:20010,arrows:'to'},
+      {from:20009,to:20011,arrows:'to'},
+      {from:20011,to:20012,arrows:'to'},
+      {from:20012,to:20013,arrows:'to'},
+      {from:20013,to:20014,arrows:'to'},
+      {from:20014,to:20015,arrows:'to'},
+      {from:20015,to:20016,arrows:'to'},
+      {from:20016,to:20017,arrows:'to'},
+      {from:20017,to:20018,arrows:'to'},
+      {from:20,to:20019,arrows:'to'},
+      {from:20019,to:20020,arrows:'to'},
+      {from:20020,to:20021,arrows:'to'},
+      {from:20,to:20023,arrows:'to'},
+      {from:22,to:20023,arrows:'to'},
+      {from:20023,to:20024,arrows:'to'},
+      {from:20,to:20025,arrows:'to'},
+      {from:22,to:20025,arrows:'to'},
+      {from:20,to:20026,arrows:'to'},
+      {from:20026,to:20052,arrows:'to'},
+      {from:20,to:20027,arrows:'to'},
+      {from:22,to:20027,arrows:'to'},
+      {from:20,to:20028,arrows:'to'},
+      {from:20028,to:20029,arrows:'to'},
+      {from:20029,to:20030,arrows:'to'},
+      {from:20030,to:20031,arrows:'to'},
+      {from:20,to:20033,arrows:'to'},
+      {from:22,to:20033,arrows:'to'},
+      {from:20033,to:20034,arrows:'to'},
+      {from:20034,to:20035,arrows:'to'},
+      {from:20,to:20036,arrows:'to'},
+      {from:22,to:20036,arrows:'to'},
+      {from:20036,to:20037,arrows:'to'},
+      {from:20037,to:20038,arrows:'to'},
+      {from:20,to:20039,arrows:'to'},
+      {from:22,to:20039,arrows:'to'},
+      {from:20,to:20040,arrows:'to'},
+      {from:22,to:20040,arrows:'to'},
+      {from:20040,to:20041,arrows:'to'},
+      {from:20041,to:20042,arrows:'to'},
+      {from:20,to:20043,arrows:'to'},
+      {from:22,to:20043,arrows:'to'},
+      {from:23,to:20043,arrows:'to'},
+      {from:20043,to:20044,arrows:'to'},
+      {from:20044,to:20045,arrows:'to'},
+      {from:20,to:20047,arrows:'to'},
+      {from:20,to:20048,arrows:'to'},
+      {from:20,to:20049,arrows:'to'},
+      {from:20049,to:20050,arrows:'to'},
+      {from:20050,to:20051,arrows:'to'},
+      {from:200,to:20053,arrows:'to'},
+      {from:20053,to:20054,arrows:'to'},
+      {from:200,to:20055,arrows:'to'},
+      {from:200,to:20056,arrows:'to'},
+      {from:220,to:20056,arrows:'to'},
+      {from:20056,to:20057,arrows:'to'},
+      {from:220,to:20058,arrows:'to'},
+      {from:20058,to:20059,arrows:'to'},
+      {from:200,to:20060,arrows:'to'},
+      {from:220,to:20060,arrows:'to'},
+      {from:200,to:20061,arrows:'to'},
+      {from:200,to:20063,arrows:'to'},
+      {from:220,to:20063,arrows:'to'},
+      {from:220,to:20064,arrows:'to'},
+      {from:220,to:20065,arrows:'to'},
+      {from:20065,to:20066,arrows:'to'},
+      {from:20066,to:20067,arrows:'to'},
+      {from:20067,to:20068,arrows:'to'},
+      {from:20068,to:20069,arrows:'to'},
+      {from:220,to:20070,arrows:'to'},
+      {from:20070,to:20071,arrows:'to'},
+      {from:20071,to:20072,arrows:'to'},
+      {from:20072,to:20073,arrows:'to'},
+      {from:220,to:20074,arrows:'to'},
+      {from:20074,to:20075,arrows:'to'},
+      {from:20075,to:20076,arrows:'to'},
+      {from:20076,to:20077,arrows:'to'},
+      {from:200,to:20078,arrows:'to'},
+      {from:220,to:20078,arrows:'to'},
+      {from:20078,to:20079,arrows:'to'},
+      {from:20079,to:20080,arrows:'to'},
+      {from:220,to:20081,arrows:'to'},
+      {from:20081,to:20082,arrows:'to'},
+      {from:20082,to:20083,arrows:'to'},
+      {from:20083,to:20084,arrows:'to'},
+      {from:20084,to:20085,arrows:'to'},
+      {from:20085,to:20086,arrows:'to'},
+      {from:20086,to:20087,arrows:'to'},
+      {from:200,to:20088,arrows:'to'},
+      {from:220,to:20088,arrows:'to'},
+      {from:200,to:20089,arrows:'to'},
+      {from:220,to:20089,arrows:'to'},
+      {from:200,to:20090,arrows:'to'},
+      {from:220,to:20090,arrows:'to'},
+      {from:20090,to:20091,arrows:'to'},
+      {from:24,to:20091,arrows:'to'},
+      {from:200,to:20092,arrows:'to'},
+      {from:220,to:20092,arrows:'to'},
+      {from:200,to:20093,arrows:'to'},
+      {from:220,to:20094,arrows:'to'},
+      {from:20093,to:20094,arrows:'to'},
+      {from:200,to:20095,arrows:'to'},
+      {from:200,to:20096,arrows:'to'},
+      {from:20096,to:20097,arrows:'to'},
+      {from:200,to:20098,arrows:'to'},
+      {from:220,to:20098,arrows:'to'},
+      {from:20098,to:20099,arrows:'to'},
+      {from:200,to:20100,arrows:'to'},
+      {from:220,to:20100,arrows:'to'},
+      {from:200,to:20101,arrows:'to'},
+      {from:220,to:20101,arrows:'to'},
+      {from:200,to:20102,arrows:'to'},
+      {from:20102,to:20103,arrows:'to'},
+      {from:20103,to:20104,arrows:'to'},
+      {from:20104,to:20105,arrows:'to'},
+      {from:24,to:20106,arrows:'to'},
+      {from:20106,to:20107,arrows:'to'},
+      {from:20107,to:20108,arrows:'to'},
+      {from:20108,to:20109,arrows:'to'},
+      {from:20109,to:20110,arrows:'to'},
+      {from:24,to:20111,arrows:'to'},
+      {from:24,to:20112,arrows:'to'},
+      {from:24,to:20113,arrows:'to'},
+      {from:24,to:20114,arrows:'to'},
+      {from:24,to:20115,arrows:'to'},
+      {from:220,to:20116,arrows:'to'},
+      {from:20116,to:20117,arrows:'to'},
+      {from:20117,to:20118,arrows:'to'},
+      {from:200,to:20119,arrows:'to'},
+      {from:23,to:20119,arrows:'to'},
+      {from:200,to:20120,arrows:'to'},
+      {from:200,to:20121,arrows:'to'},
+      {from:200,to:20123,arrows:'to'},
+      {from:200,to:20124,arrows:'to'},
+      {from:200,to:20125,arrows:'to'},
+      {from:220,to:20125,arrows:'to'},
+      {from:200,to:20126,arrows:'to'},
+      {from:220,to:20128,arrows:'to'},
+      {from:220,to:20129,arrows:'to'},
+      {from:24,to:20130,arrows:'to'},
+
+      
+      
+      {from:20009,to:100013,arrows:'to'},
+      {from:20018,to:100008,arrows:'to'},
+      {from:20026,to:100006,arrows:'to'},
+      {from:20032,to:100001,arrows:'to'},
+      {from:20032,to:100002,arrows:'to'},
+      {from:20045,to:100004,arrows:'to'},
+      {from:20045,to:100005,arrows:'to'},
+      {from:20048,to:100003,arrows:'to'},
+      {from:20052,to:100007,arrows:'to'},
+      {from:20061,to:100009,arrows:'to'},
+      {from:3,to:20065,arrows:'to'},
+      {from:3,to:20070,arrows:'to'},
+      {from:3,to:20074,arrows:'to'},
+      {from:8,to:20120,arrows:'to'},
+      {from:8,to:20121,arrows:'to'},
+      {from:8,to:20128,arrows:'to'},
+      {from:30,to:20064,arrows:'to'},
+      {from:31,to:20090,arroes:'to'},
+      {from:32,to:20129,arrows:'to'},
+      {from:38,to:20115,arrows:'to'},
+      {from:60,to:20006,arrows:'to'},
+      {from:91,to:20126,arrows:'to'},
+      {from:94,to:20124,arrows:'to'},
+      {from:108,to:20130,arrows:'to'},
+      
+    ]);</script>
+    <script type="text/javascript" defer>var container=document.getElementById('network');
+      var sel_con=document.getElementById('box');
+      var data={nodes:nodes,edges:edges};
+      var options={nodes:{color:{highlight:'orange',},shapeProperties:{useBorderWithImage:!0,},borderWidthSelected:10,},
+      edges:{color:{highlight:'blue',},},};var network=new vis.Network(container,data,options);
+      const autoCompleteJS=new autoComplete
+      (
+        {placeHolder:"Search for Node...",data:{src:
+        ["1 :ジャンル","2 : 恋愛","3 : アクション","4 : 日常","5 : 異世界","6 : 泣き","7 : ファンタジー","8 : ギャグ","9 : 青春","10 : その他",
+        "20 : ラブコメ","21 : 家族愛","22 : ハーレム","23 : 妹","24 : 百合",
+        "30 : 無双","31 : 銃","32 : バトル","33 : 剣","34 : ロボット","35 : 魔法少女","36 : SF","37 : ゾンビ","38 : 戦争","39 : スパイ",
+        "40 : きらら","41 : 旅","42 : ジェネリックきらら",
+        "50 : 転生","51 : 転移","52 : 未分類","53 : 勇者召喚","54 : 現地",
+        "60 : Key作品","61 : 鬱","62 : グロ",
+        "70 : 歴史","71 : ダーク","72 : 魔法,魔術","73 : 中華","74 : 超能力","75 : 妖",
+        "90 : 部活","91 : 学校,学園系","92 : お仕事系","93 : アイドル","94 : 農業","95 : バンド","96 : スポーツ","97 : 音楽","98 : サバイバル",
+        "100 : ミステリー","101 : TS","102 : 擬人化","103 : 歌劇,演劇","104 : ループ系","105 : 古典芸能","106 : 子供向け","107 : コメディ",
+        "200 : ラブコメ2",
+        "220 : ハーレム2",
+        "20000 : とらドラ！ (検索用: toradora)","20001 : 凪のあすから (検索用: nagiasu)","20002 : true tears",
+        "20003 : ココロコネクト (検索用: kokoro)","20004 : 月がきれい (検索用: tsuki,tuki)","20005 : となりの怪物くん (検索用: tonari)",
+        "20006 : CLANNAD","20007 : CLANNAD AFTER STORY","20008 : ゴールデンタイム (検索用: golden,time)","20009 : 化物語 (検索用: monogatari)",
+        "20010 : 傷物語","20011 : 偽物語","20012 : 猫物語 黒","20013 : 物語 セカンドシーズン","20014 : 憑物語","20015 : 終物語","20016 : 暦物語",
+        "20017 : 続・終物語","20018 : 物語 オフ＆モンスターシーズン","20019 : 中二病でも恋がしたい！ (検索用: tyuuni,tyuni,chuni,chuuni,ZAQ)",
+        "20020 : 中二病でも恋がしたい！ 戀","20021 : 中二病でも恋がしたい！ -Take On Me-","20022 : 四月は君の嘘 (検索用:kimiuso)",
+        "20023 : ニセコイ (検索用: nisekoi)","20024 : ニセコイ:","20025 : 俺の彼女と幼なじみが修羅場すぎる (検索用: oresyura)",
+        "20026 : さくら荘のペットな彼女 (検索用: sakurasou)","20027 : 変態王子と笑わない猫。 (検索用: henneko)",
+        "20028 : かぐや様は告らせたい 天才たちの恋愛頭脳戦 (検索用: 藤原書記,kaguya)","20029 : かぐや様は告らせたい？",
+        "20030 : かぐや様は告らせたい -ウルトラロマンティック-","20031 : かぐや様は告らせたい -ファーストキッスは終わらない-",
+        "20032 : からかい上手の高木さん (検索用: karakai)","20033 : 彼女、お借りします (検索用: kanokari,かのかり,千鶴,墨ちゃん,ルカ)",
+        "20034 : 彼女、お借りします 第2期","20035 : 彼女、お借りします 第3期",
+        "20036 : やはり俺の青春ラブコメはまちがっている。(検索用: やはり,おれの,俺ガイル,比企谷,いろはす,ゆきのん)",
+        "20037 : やはり俺の青春ラブコメはまちがっている。 続","20038 : やはり俺の青春ラブコメはまちがっている。 完",
+        "20039 : 五等分の花嫁 (検索用: ごとよめ,gotoyome,)","20040 : 神のみぞ知るセカイ (検索用: kaminomi)","20041 : 神のみぞ知るセカイ II",
+        "20042 : 神のみぞ知るセカイ 女神篇","20043 : 俺の妹がこんなに可愛いわけがない (検索用: oreimo)",
+        "20044 : 俺の妹がこんなに可愛いわけがない 第2期","20045 : エロマンガ先生 (検索用: ero,和泉紗霧,ラノベ)","20046 : Just Because!",
+        "20047 : ゲーマーズ! (検索用: gamers,勘違い)","20048 : 月刊少女野崎くん (検索用: げっかん,gekkan,パラス,オーイシマサヨシ,大石昌良)",
+        "20049 : WORKING!! (検索用: わーきんぐ,小鳥遊,ぽぷら,ワグナリア,お仕事)","20050 : WORKING’!!","20051 : WORKING!!!",
+        "20052 : 僕らはみんな河合荘 (検索用: ぼくら,bokura)","20053 : バカとテストと召喚獣 (検索用: ばかてす,バカテス,baka)",
+        "20054 : バカとテストと召喚獣 にっ!","20055 : 寄宿学校のジュリエット (検索用: juliet,kisyuku,kishuku)",
+        "20056 : 僕は友達が少ない (検索用: ぼくは,はがない,haganai,bokuha)","20057 : 僕は友達が少ない NEXT",
+        "20058 : IS <インフィニット・ストラトス>","20059 : IS <インフィニット・ストラトス>2","20060 : まよチキ！ (検索用: mayo,まよちき)",
+        "20061 : 異能バトルは日常系のなかで (検索用: inou,battle)","20062 : その着せ替え人形は恋をする (検索用: sono,kisekae,bisquedoll,gyaru)",
+        "20063 : 生徒会の一存 (検索用: seitokai,ichizon,itizon)",
+        "20064 : カンピオーネ！ ～まつろわぬ神々と神殺しの魔王～ (検索用: campi-one,kanpi,kampi)",
+        "20065 : デート・ア・ライブ (検索用: デアラ,date-a-live,deara)","20066 : デート・ア・ライブII","20067 : デート・ア・ライブIII",
+        "20068 : デート・ア・ライブIV","20069 : デート・ア・ライブV","20070 : ハイスクールD×D (検索用:oppai,harem-king,highschool,dd)",
+        "20071 : ハイスクールD×D NEW","20072 : ハイスクールD×D BorN","20073 : ハイスクールD×D HERO",
+        "20074 : ToLOVEる -とらぶる- (検索用:ラッキースケベ,toloveru,とらぶる)","20075 : もっとToLOVEる -とらぶる-",
+        "20076 : ToLOVEる ダークネス","20077 : ToLOVEる ダークネス2nd",
+        "20078 : 冴えない彼女の育てかた (検索用:冴えカノ,saekano,さえない,金髪ツインテ)","20079 : 冴えない彼女の育てかた♭",
+        "20080 : 冴えない彼女の育てかた fine","20081 : ストライク・ザ・ブラッド (検索用:strike,suto,ストブラ,stb)",
+        "20082 : ストライク・ザ・ブラッド OVA","20083 : ストライク・ザ・ブラッド OVAII","20084 : ストライク・ザ・ブラッド OVAIII",
+        "20085 : ストライク・ザ・ブラッド OVAspecial","20086 : ストライク・ザ・ブラッド OVAIV","20087 : ストライク・ザ・ブラッド OVAV",
+        "20088 : 可愛ければ変態でも好きになってくれますか？ (検索用:変好き,hensuki,へんすき)",
+        "20089 : 六畳間の侵略者！？ (検索用:ろくじょうかん,rokujoukan)","20090 : 緋弾のアリア (検索用:ひだんのありあ,hidan)",
+        "20091 : 緋弾のアリアAA","20092 : 俺の脳内選択肢が、学園ラブコメを全力で邪魔している (検索用: 脳コメ,のうコメ,noukome)",
+        "20093 : これはゾンビですか？ (検索用: これゾン,これぞん,koreha,korezon)","20094 : これはゾンビですか？ OF THE DEAD",
+        "20095 : かんなぎ (検索用:kannagi,nagi)","20096 : 政宗くんのリベンジ (検索用:まさむね,masamune,revenge)",
+        "20097 : 政宗くんのリベンジR","20098 : そらのおとしもの (検索用:そらおと,soraoto)","20099 : そらのおとしものf",
+        "20100 : 迷い猫オーバーラン！ (検索用:まよいねこ,mayoineko,おーばーらん,overrun)",
+        "20101 : 恋愛暴君 (検索用:れんあいぼうくん,renai,boukun)",
+        "20102 : 青春ブタ野郎はバニーガール先輩の夢を見ない (検索用:青ブタ,あおぶた,せいしゅん,aobuta,seisyun)",
+        "20103 : 青春ブタ野郎はゆめみる少女の夢を見ない","20104 : 青春ブタ野郎はおでかけシスターの夢を見ない",
+        "20105 : 青春ブタ野郎はランドセルガールの夢を見ない","20106 : ゆるゆり (検索用:yuruyuri)",
+        "20107 : ゆるゆり 2期","20108 : ゆるゆり なちゅやちゅみ！","20109 : ゆるゆり なちゅやちゅみ！＋",
+        "20110 : ゆるゆり さんハイ！","20111 : 安達としまむら (検索用:adachi,shimamura,あだち)",
+        "20112 : やがて君になる (検索用:yagakimi,yagate,やが君)","20113 : citrus (検索用:しとらす)","20114 : 桜Trick (検索用:さくら,sakura)",
+        "20115 : 終末のイゼッタ (検索用:しゅうまつ,syumatsu,syuumatsu,syuumatu)","20116 : トリニティセブン (検索用: trinity,seven,とりにてぃ)",
+        "20117 : トリニティセブン 悠久図書館と錬金術少女","20118 : トリニティセブン 天空図書館と真紅の魔王",
+        "20119 : 妹さえいればいい (検索用:いもさえ,imouto,妹さえ,imosae)",
+        "20120 : ときどきボソッとロシア語でデレる隣のアーリャさん (検索用: ロシデレ,rosidere,tokidoki)",
+        "20121 : 負けヒロインが多すぎる！ (検索用: 負けイン,makein,まけいん)","20122 : 恋と嘘 (検索用: こい,koitouso,うそ)",
+        "20123 : あの夏で待ってる (検索用: anonatsu,anonatu,あのなつ)","20124: のうりん (検索用: nourin)",
+        "20125: 山田くんと七人の魔女 (検索用: yamajo,yamadakun,やまだ,やまじょ,山女)",
+        "20126: 実は私は (検索用:じつわた,jitsuwata,zitsuwata,jituwata,jitsuha,jituha)",
+        "20127: orange (検索用:おれんじ,オレンジ)","20128: 私がモテてどうすんだ (検索用: わたもて,watamote,私モテ,わたモテ)",
+        ],cache:!0,},resultItem:{highlight:!0},submit:!0,
+        events:{
+          input:{
+            selection:(event)=>{
+              const selection=event.detail.selection.value;
+              const number=parseInt(selection);
+              autoCompleteJS.input.value=number
+            }
+          }
+        }
+      });
+    </script>
+    <script type = "text/javascript" async> 
+        function Button() {
+          var code = document.getElementById('autoComplete').value;
+          select_node(code);
+        }
+        const code2 = document.getElementById('autoComplete');
+        code2.addEventListener('keydown', keydown_event);
+        
+        function keydown_event(e) {
+          if (e.key === 'Enter') {
+            select_node(code2.value);
+          }
+          return !1
+        }
+        network.on('click', function(params) {
+          let selectedNodeId = params.nodes[0];
+          if (params.nodes.length == 1) {
+            var node = nodes.get(selectedNodeId);
+            if (selectedNodeId >= 20000) {
+              open(node.click, "_blank");
+            }
+          }
+        });
+        network.on('selectNode', function(params) {
+          let selectedNodeId = params.nodes[0];
+          select_node(selectedNodeId);
+        });
+        
+        function select_node(value) {
+          try {
+            network.selectNodes([value]);
+            let positions = network.getPositions([value]);
+            let position = positions[value];
+            let options = {
+              position: position,
+              animation: {
+                duration: 250,
+                easingFunction: 'linear'
+              }
+            };
+            network.moveTo(options);
+          } catch (error) {
+            network.fit();
+          }
+        }
+        
+        function reset() {
+          autoCompleteJS.input.value = "";
+        }
+        
+        function Time() {
+          var realtime = new Date();
+          var year = realtime.getFullYear();
+          var month = realtime.getMonth() + 1;
+          var date = realtime.getDate();
+          var text = year + '/' + month + '/' + date;
+          document.getElementById("real-time").innerHTML = text
+        }
+        setInterval('Time()', 1000); 
+    </script>
+</body>
+</html>
