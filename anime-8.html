@@ -111,13 +111,13 @@
     <script type="text/javascript" defer>
       var nodes = new vis.DataSet([
         //ジャンル要素
-        {id: 4, label: '日常', },
+        {id: 4, label: '日常',click: "https://nokosaaan.github.io/hobby/anime-4.html"},
         {id: 8, label: 'ギャグ', },
-        {id: 20, label: 'ラブコメ'},
-        {id: 32, label: 'バトル'},
-        {id: 38, label: '戦争'},
-        {id: 39, label: 'スパイ'},
-        {id: 91, label: '学校,学園系'},
+        {id: 20, label: 'ラブコメ',click: "https://nokosaaan.github.io/hobby/anime-2.html"},
+        {id: 32, label: 'バトル',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 38, label: '戦争',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 39, label: 'スパイ',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 91, label: '学校,学園系',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
         //ギャグ作品
         {id: 20048, label: '月刊少女野崎くん', shape: 'image', image:"image/anime/20048.png", group:1, click:"https://www.tv-tokyo.co.jp/anime/nozakikun/sp/"},
         {id: 20049, label: 'WORKING!!', shape: 'image', image:"image/anime/20049.png", group:1, click:"https://www.wagnaria.com/1st/"},
@@ -378,6 +378,9 @@
         if (params.nodes.length == 1) {
           var node = nodes.get(selectedNodeId);
           if (selectedNodeId >= 20000) {
+            open(node.click, "_blank");
+          }
+          else if (selectedNodeId == 4||selectedNodeId == 4||selectedNodeId == 32||selectedNodeId == 38||selectedNodeId == 39||selectedNodeId == 91) {
             open(node.click, "_blank");
           }
         }

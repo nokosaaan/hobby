@@ -111,23 +111,23 @@
     <script type="text/javascript" defer>
       var nodes = new vis.DataSet([
         {id: 7, label: 'ファンタジー', },
-        {id: 8, label: 'ギャグ', },
+        {id: 8, label: 'ギャグ',click: "https://nokosaaan.github.io/hobby/anime-8.html"},
         //ジャンル要素
-        {id: 30, label: '無双'},
-        {id: 32, label: 'バトル'},
-        {id: 36, label: 'SF'},
-        {id: 38, label: '戦争'},
-        {id: 41, label: '旅'},
-        {id: 54, label: '現地'},
+        {id: 30, label: '無双',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 32, label: 'バトル',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 36, label: 'SF',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 38, label: '戦争',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 41, label: '旅',click: "https://nokosaaan.github.io/hobby/anime-4.html"},
+        {id: 54, label: '現地',click: "https://nokosaaan.github.io/hobby/anime-5.html"},
         {id: 70, label: '歴史'},
         {id: 71, label: 'ダーク'},
         {id: 72, label: '魔法,魔術'},
         {id: 73, label: '中華'},
         {id: 74, label: '超能力'},
         {id: 75, label: '妖'},
-        {id: 91, label: '学校,学園系'},
-        {id: 92, label: 'お仕事系'},
-        {id: 108, label: 'ホラー'},
+        {id: 91, label: '学校,学園系',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 92, label: 'お仕事系',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 108, label: 'ホラー',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
         //ファンタジー作品
         {id: 40045, label: 'えんどろ～!', shape:'image', image:"image/anime/40045.jpg", group:1, click:"http://endro.jp/"},
         {id: 40053, label: 'うらら迷路帖', shape:'image', image:"image/anime/40053.png", group:1, click:"https://www.tbs.co.jp/anime/urara/"},
@@ -484,6 +484,9 @@
         if (params.nodes.length == 1) {
           var node = nodes.get(selectedNodeId);
           if (selectedNodeId >= 20000) {
+            open(node.click, "_blank");
+          }
+          else if (selectedNodeId == 8||selectedNodeId == 30||selectedNodeId == 32||selectedNodeId == 36||selectedNodeId == 38||selectedNodeId == 41||selectedNodeId == 54||selectedNodeId == 91||selectedNodeId == 92||selectedNodeId == 108) {
             open(node.click, "_blank");
           }
         }

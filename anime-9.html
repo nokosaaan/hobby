@@ -153,10 +153,10 @@
     <script type="text/javascript" defer>
       var nodes = new vis.DataSet([
         //ジャンル要素
-        {id: 2, label: '恋愛', },
-        {id: 4, label: '日常', },
-        {id: 9, label: '青春', },
-        {id: 32, label: 'バトル'},
+        {id: 2, label: '恋愛',click: "https://nokosaaan.github.io/hobby/anime-2.html"},
+        {id: 4, label: '日常',click: "https://nokosaaan.github.io/hobby/anime-4.html" },
+        {id: 9, label: '青春' },
+        {id: 32, label: 'バトル',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
         {id: 90, label: '部活'},
         {id: 91, label: '学校,学園系'},
         {id: 92, label: 'お仕事系'},
@@ -166,10 +166,10 @@
         {id: 96, label: 'スポーツ'},
         {id: 97, label: '音楽'},
         {id: 98, label: 'サバイバル'},
-        {id: 103, label: '歌劇,演劇'},
-        {id: 104, label: 'ループ系'},
-        {id: 105, label: '古典芸能'},
-        {id: 100, label: 'ミステリー'},
+        {id: 100, label: 'ミステリー',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
+        {id: 103, label: '歌劇,演劇',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
+        {id: 104, label: 'ループ系',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
+        {id: 105, label: '古典芸能',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
         
         
         //青春作品
@@ -542,6 +542,9 @@
           if (params.nodes.length == 1) {
             var node = nodes.get(selectedNodeId);
             if (selectedNodeId >= 20000) {
+              open(node.click, "_blank");
+            }
+            else if (selectedNodeId == 2||selectedNodeId == 4||selectedNodeId == 32||selectedNodeId == 100||selectedNodeId == 103||selectedNodeId == 104||selectedNodeId == 105) {
               open(node.click, "_blank");
             }
           }

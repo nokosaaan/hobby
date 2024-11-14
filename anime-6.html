@@ -111,16 +111,16 @@
     <script type="text/javascript" defer>
       var nodes = new vis.DataSet([
         {id: 6, label: '泣き', },
-        {id: 7, label: 'ファンタジー', },
-        {id: 9, label: '青春', },
+        {id: 7, label: 'ファンタジー',click: "https://nokosaaan.github.io/hobby/anime-7.html"},
+        {id: 9, label: '青春',click: "https://nokosaaan.github.io/hobby/anime-9.html" },
         //ジャンル要素
         {id: 24, label: '百合'},
         {id: 32, label: 'バトル'},
-        {id: 38, label: '戦争'},
-        {id: 60, label: 'Key作品'},
-        {id: 61, label: '鬱'},
-        {id: 62, label: 'グロ'},
-        {id: 102, label: '擬人化'},
+        {id: 38, label: '戦争',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 60, label: 'Key作品',click: "https://nokosaaan.github.io/hobby/anime-6.html"},
+        {id: 61, label: '鬱',click: "https://nokosaaan.github.io/hobby/anime-6.html"},
+        {id: 62, label: 'グロ',click: "https://nokosaaan.github.io/hobby/anime-6.html"},
+        {id: 102, label: '擬人化',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
         //泣き作品
         {id: 20022, label: '君嘘', shape: 'image', image:"image/anime/20022.jpg", group:1, click:"https://www.kimiuso.jp/"},
 
@@ -329,6 +329,9 @@
         if (params.nodes.length == 1) {
           var node = nodes.get(selectedNodeId);
           if (selectedNodeId >= 20000) {
+            open(node.click, "_blank");
+          }
+          else if (selectedNodeId == 7||selectedNodeId == 9||selectedNodeId == 24||selectedNodeId == 32||selectedNodeId == 38||selectedNodeId == 60||selectedNodeId == 61||selectedNodeId == 62||selectedNodeId == 102) {
             open(node.click, "_blank");
           }
         }
