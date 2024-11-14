@@ -111,19 +111,19 @@
     <script type="text/javascript" defer>
       var nodes = new vis.DataSet([
         {id: 4, label: '日常', },
-        {id: 8, label: 'ギャグ', },
+        {id: 8, label: 'ギャグ',click: "https://nokosaaan.github.io/hobby/anime-8.html"},
         //ジャンル要素
-        {id: 23, label: '妹'},
-        {id: 24, label: '百合'},
-        {id: 37, label: 'ゾンビ'},
+        {id: 23, label: '妹',click: "https://nokosaaan.github.io/hobby/anime-2.html"},
+        {id: 24, label: '百合',click: "https://nokosaaan.github.io/hobby/anime-2.html"},
+        {id: 37, label: 'ゾンビ',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
         {id: 40, label: 'きらら'},
         {id: 41, label: '旅'},
         {id: 42, label: 'ジェネリックきらら'},
-        {id: 90, label: '部活'},
-        {id: 91, label: '学校,学園系'},
-        {id: 92, label: 'お仕事系'},
-        {id: 100, label: 'ミステリー'},
-        {id: 101, label: 'TS'},
+        {id: 90, label: '部活',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 91, label: '学校,学園系',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 92, label: 'お仕事系',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 100, label: 'ミステリー',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
+        {id: 101, label: 'TS',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
         //日常作品
         {id: 40000, label: 'けいおん!', shape:'image', image:"image/anime/40000.webp", group:1, click:"https://www.tbs.co.jp/anime/k-on/index-j.html"},
         {id: 40001, label: 'けいおん!!', shape:'image', image:"image/anime/40001.webp", group:1, click:"https://www.tbs.co.jp/anime/k-on/k-on_tv/index-j.html"},
@@ -405,6 +405,9 @@
         if (params.nodes.length == 1) {
           var node = nodes.get(selectedNodeId);
           if (selectedNodeId >= 20000) {
+            open(node.click, "_blank");
+          }
+          else if (selectedNodeId == 8||selectedNodeId == 23||selectedNodeId == 24||selectedNodeId == 37||selectedNodeId == 90||selectedNodeId == 91||selectedNodeId == 92||selectedNodeId == 100||selectedNodeId == 101) {
             open(node.click, "_blank");
           }
         }

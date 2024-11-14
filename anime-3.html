@@ -113,7 +113,7 @@
         {id: 3, label: 'アクション', },
         {id: 7, label: 'ファンタジー', },
         //ジャンル要素
-        {id: 22, label: 'ハーレム'},
+        {id: 22, label: 'ハーレム',click: "https://nokosaaan.github.io/hobby/anime-2.html"},
         {id: 30, label: '無双'},
         {id: 31, label: '銃'},
         {id: 32, label: 'バトル'},
@@ -124,12 +124,12 @@
         {id: 37, label: 'ゾンビ'},
         {id: 38, label: '戦争'},
         {id: 39, label: 'スパイ'},
-        {id: 61, label: '鬱'},
-        {id: 62, label: 'グロ'},
-        {id: 70, label: '歴史'},
-        {id: 91, label: '学校,学園系'},
-        {id: 98, label: 'サバイバル'},
-        {id: 100, label: 'ミステリー'},
+        {id: 61, label: '鬱',click: "https://nokosaaan.github.io/hobby/anime-6.html"},
+        {id: 62, label: 'グロ',click: "https://nokosaaan.github.io/hobby/anime-6.html"},
+        {id: 70, label: '歴史',click: "https://nokosaaan.github.io/hobby/anime-7.html"},
+        {id: 91, label: '学校,学園系',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 98, label: 'サバイバル',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 100, label: 'ミステリー',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
         //アクション作品
         {id: 30000, label: 'Fate/stay night', shape:'image', image:"image/anime/30000.png", group:1, click:"https://www.fate-sn.jp/"},
         {id: 30001, label: 'Fate/stay night UBW', shape:'image', image:"image/anime/30001.png", group:1, click:"https://www.fate-sn.com/ubw/"},
@@ -621,6 +621,9 @@
         if (params.nodes.length == 1) {
           var node = nodes.get(selectedNodeId);
           if (selectedNodeId >= 20000) {
+            open(node.click, "_blank");
+          }
+          else if (selectedNodeId == 22||selectedNodeId == 61||selectedNodeId == 62||selectedNodeId == 70||selectedNodeId == 91||selectedNodeId == 98||selectedNodeId == 100) {
             open(node.click, "_blank");
           }
         }

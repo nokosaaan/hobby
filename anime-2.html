@@ -111,20 +111,20 @@
     <script type="text/javascript" defer>
       var nodes = new vis.DataSet([
         {id: 2, label: '恋愛', },
-        {id: 3, label: 'アクション', },
+        {id: 3, label: 'アクション', click: "https://nokosaaan.github.io/hobby/anime-3.html"},
         //ジャンル要素
         {id: 20, label: 'ラブコメ'},
         {id: 21, label: '家族愛'},
         {id: 22, label: 'ハーレム'},
         {id: 23, label: '妹'},
         {id: 24, label: '百合'},
-        {id: 30, label: '無双'},
-        {id: 31, label: '銃'},
-        {id: 32, label: 'バトル'},
-        {id: 60, label: 'Key作品'},
-        {id: 91, label: '学校,学園系'},
-        {id: 94, label: '農業'},
-        {id: 108, label: 'ホラー'},
+        {id: 30, label: '無双',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 31, label: '銃',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 32, label: 'バトル',click: "https://nokosaaan.github.io/hobby/anime-3.html"},
+        {id: 60, label: 'Key作品',click: "https://nokosaaan.github.io/hobby/anime-6.html"},
+        {id: 91, label: '学校,学園系',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 94, label: '農業',click: "https://nokosaaan.github.io/hobby/anime-9.html"},
+        {id: 108, label: 'ホラー',click: "https://nokosaaan.github.io/hobby/anime-10.html"},
         {id: 200, label: 'ラブコメ2'},
         {id: 220, label: 'ハーレム2'},
         //恋愛作品
@@ -575,6 +575,9 @@
           if (params.nodes.length == 1) {
             var node = nodes.get(selectedNodeId);
             if (selectedNodeId >= 20000) {
+              open(node.click, "_blank");
+            }
+            else if(selectedNodeId==3||selectedNodeId==8||selectedNodeId==30||selectedNodeId==31||selectedNodeId==32||selectedNodeId==38||selectedNodeId==60||selectedNodeId==91||selectedNodeId==94||selectedNodeId==108) {
               open(node.click, "_blank");
             }
           }
