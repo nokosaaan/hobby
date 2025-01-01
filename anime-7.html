@@ -22,6 +22,7 @@
 
     <script type="text/javascript" defer>
       var nodes = new vis.DataSet([
+        {id: 6, label: '泣き', click: "https://nokosaaan.github.io/hobby/anime-6.html"},
         {id: 7, label: 'ファンタジー', },
         {id: 8, label: 'ギャグ',click: "https://nokosaaan.github.io/hobby/anime-8.html"},
         //ジャンル要素
@@ -246,6 +247,7 @@
       {from:70005,to:100017,arrows:'to'},
       {from:70031,to:100018,arrows:'to'},
       {from:70031,to:100019,arrows:'to'},
+      {from:6,to:60036,arrows:'to'},
       {from:8,to:70041,arrows:'to'},
       {from:30,to:70078,arrows:'to'},
       {from:32,to:70042,arrows:'to'},
@@ -429,7 +431,7 @@
           if (selectedNodeId >= 20000) {
             open(node.click, "_blank");
           }
-          else if (selectedNodeId == 8||selectedNodeId == 30||selectedNodeId == 32||selectedNodeId == 36||selectedNodeId == 38||selectedNodeId == 41||selectedNodeId == 54||selectedNodeId == 91||selectedNodeId == 92||selectedNodeId == 108) {
+          else if (selectedNodeId == 6||selectedNodeId == 8||selectedNodeId == 30||selectedNodeId == 32||selectedNodeId == 36||selectedNodeId == 38||selectedNodeId == 41||selectedNodeId == 54||selectedNodeId == 91||selectedNodeId == 92||selectedNodeId == 108) {
             open(node.click, "_blank");
           }
         }
